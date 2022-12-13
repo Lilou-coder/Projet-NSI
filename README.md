@@ -5,7 +5,7 @@ Notre idée :Kraken
             
             Un site intéractif où les utilisateur pourront se confronter à des questions de culture générale et communiquer simultanément.
             
-            Les utilisateurs pourront s'affonter sur divers sujets avec un temps limité, et le choix du nombre de questions est accordé aux               joueurs (maximum de 15).
+            Les utilisateurs pourront s'affonter sur divers sujets avec un temps limité, et le choix du nombre de questions est accordé aux joueurs (max de 15)              
             Il y aura les thèmes d'histoire, de géographie, des siences et vie de la terre et de mathématiques.
                         - on préparera 30 questions pour chaque thême qui seront choisi au hasard dépendant du choix de l'utilisateur
             Les questions se presenteront sous forme de QCM avec une présentation coloré et ludique.
@@ -19,7 +19,7 @@ Notre idée :Kraken
             
             
             1er page : 
-            - Afin d'accéder au jeu, il faut d'abord s'inscrire ou se connecter. La première page en accédant le site sera donc une page avec ces deux    boutons(database avec utilisateur et mot-de-passe crypté).
+            - Afin d'accéder au jeu, il faut d'abord s'inscrire ou se connecter. La première page en accédant le site sera donc une page avec ces deux boutons(database avec utilisateur et mot-de-passe crypté).    
             - Sur cette première page, en scrollant, il y aura les règles du jeu. 
             
             2ème page : Homepage
