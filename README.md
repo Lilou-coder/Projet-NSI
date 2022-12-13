@@ -34,7 +34,7 @@ Notre idée :Kraken
             4ème page : paramêtre de jeux
             - Nombre de questions sera compris entre 5 et 15 --> scroll down, choisi par l'utilisateur
             - Temps pour chaque questions sera compris entre 5 et 15 secondes --> scroll down, choisi par l'utilisateur
-            - bouton inviter une personne (2 joeuur qui jouent en même temps max)
+            - bouton inviter une personne (2 joueurs qui jouent en même temps max)
             - bouton commencer la partie - une notification pop-up apparaîtra quand quelqu'un est invité en haut de la page ou dans le chat
             
             5ème page : gameplay
@@ -42,7 +42,7 @@ Notre idée :Kraken
             - à droite le chat
             - la question en haut centrée
             - quatres cases avec les réponses
-            - plus l'utilisateur prend du temps à repondre, moins il a de points
+            - plus l'utilisateur prend du temps à repondre, moins il y a de points
             - (un malus apparaît quand l'autre à gagné, un pop-up d'encre qui cache la vision de la page de l'autre)
             
             6 ème page : 
