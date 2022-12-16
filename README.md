@@ -7,18 +7,18 @@ Projet NSI avec Juliette CHEM-LENHOF, Alexandre EGUERRE, Lilou COLLE
             Semaine 1 : Choisir et définir le projet + créer le ReadMe ainsi que s'inscrire sur Github. 
             Semaine 2 : Definition du cahier des charges + description précises de chaque page du jeu + choisir le nom du jeu ("Kraken")
             Semaine 3 : Definir le calendrier et s'attribuer les tâches 
-            Semaine 4 : 
-            Semaine 5 : 
-            Semaine 6 : 
-            Semaine 7 : 
-            Semaine 8 : 
-            Semaine 9 : 
-            Semaine 10 : 
-            Semaine 11 : 
-            Semaine 12 : 
-            Semaine 13 : 
-            Semaine 14 :
-            Semaine 15 : 
+            Semaine 4 : Finir la base du site web et perfectionner les bugs + clear and change database (Lilou) + questions ( Juliette et Alexandre) 
+            Semaine 5 : Page numéro 3 et 4
+            Semaine 6 : Page 5 - installer designe ( time, variable qui compte le score, choix des questions - dictionnaire? )
+            Semaine 7 : Page 5 - affichage des questions et réponses + bonus?
+            Semaine 8 : Finaliser page 5 
+            Semaine 9 : Page 6 - animation : deux bateaux représentant les deux joueurs et le kraken englouti celui du perdant 
+            Semaine 10 : Finalisation et debuggage du jeu - button return, and revenge ( * On est optimiste ) 
+            Semaine 11 : design (Juliette) et vérification du fonctionnement (Lilou et Alexandre) 
+            Semaine 12 : installation du chat (pop-up) (Lilou, Alexandre, Juliette) 
+            Semaine 13 : installation du chat (pop-up) (Lilou, Alexandre, Juliette)
+            Semaine 14 : Finaliser / debuger
+            Semaine 15 : Finaliser / debuger
             
 
 Notre idée :Kraken
@@ -44,8 +44,7 @@ Notre idée :Kraken
             
             2ème page : Homepage
             - Après s'être connécté, il y aura sur le côté chat une rubrique chat avec ses amis. Ce chat reste tout le temps, même en jouant
-            - liste d'amis, search bar qui pourra accéder au profil de tous les utilisateur pour se faire des amis. 
-            -Bouton play, qui accédera à une autre page
+            - Bouton play, qui accédera à une autre page
             
             3ème page : choisir le thème
             - 4 bouton : Histoire, Géo, Maths, SVT - décidera des questions 
@@ -72,7 +71,23 @@ Notre idée :Kraken
             
             Choses à faire : 
             - vérifier le site : meme apology, changer le database, corriger "if user tries to log in with same username as another"
-            - faire les question pour le jeu
+            - faire les question pour le jeu - 120 en tout (Juliette) 
             - installer le chat et la mise en page
-            - avoir une nouvelle page pour acceui
+            - avoir une nouvelle page pour le jeu en lui même qui n'apparait que lorsqu'on appuie sur le bouton 'jouer' sur le homepage
+            - deux autres pages pour les paramètres et les 
+            - créer le logo
+            - créer les animations 
+            - installer le systeme de bonus : encre, enlever deux réponses, regarder la réponse de l'autre
+            - créer la page intéractif pour le jeux avec les boutons 
+            - chat, un onglet volant qui apparaît au début d'une partie et qui se termine à la fin 
+            - pop-ups et notifications 
+            - design du site (Juliette) 
+            - refaire les catégories du database (Lilou) 
+            - Inviter quelqu'un à jouer avec
+            
+            
+            
+            
+            
+            
            
