@@ -7,7 +7,7 @@ Projet NSI avec Juliette CHEM-LENHOF, Alexandre EGUERRE, Lilou COLLE
             Semaine 1 : Choisir et définir le projet + créer le ReadMe ainsi que s'inscrire sur Github ( Lilou, Alexandre, Juliette)
             Semaine 2 : Definition du cahier des charges + description précises de chaque page du jeu + choisir le nom du jeu ("Kraken")
             Semaine 3 : Definir le calendrier et s'attribuer les tâches ( Lilou, Alexandre, Juliette)
-            Semaine 4 : Finir la base du site web et perfectionner les bugs + clear and change database (Lilou) + questions ( Juliette et Alexandre) 
+            Semaine 4 : Finir la base du site web et perfectionner les bugs + clear and change database (Lilou) + questions ( Juliette et Alexandre) + inviter quelqu'un ( Lilou, Alexandre, Juliette)
             Semaine 5 : Page numéro 3 (Lilou, Juliette) et 4 (Alexandre)
             Semaine 6 : Page 5 - installer designe (Juliette) + vision des paramètres: time( Alexandre), variable qui compte le score( Alexandre), choix des questions - dictionnaire? (Lilou) ) 
             Semaine 7 : Page 5 - affichage des questions (Juliette) et réponses (Lilou) + bonus? (Alexandre)
