@@ -48,7 +48,7 @@ Notre idée :Kraken
             6 ème page : 
             - page du gagnant, nombre de point affiché
             - animation kraken qui mange l'utilisateur qui a perdu
-            - bouton qui renvoie à la page principale ouais 
+            - bouton qui renvoie à la page principale
             
             
             
