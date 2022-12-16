@@ -37,9 +37,9 @@ Notre idée :Kraken
             Il y aura un systeme de bonus pour certaines bonnes réponses pour destabiliser ou penaliser l'adversaire.
             Il prends pour inspiartion kahoot.
             
-Plan : 
+ Plan : 
             1er page : 
-            - Afin d'accéder au jeu, il faut d'abord s'inscrire ou se connecter. La première page en accédant le site sera donc une page avec ces deux boutons(database avec utilisateur et mot-de-passe crypté).    
+            - Afin d'accéder au jeu, il faut d'abord s'inscrire ou se connecter. La première page en accédant le site sera donc une page avec ces deux    boutons(database avec utilisateur et mot-de-passe crypté).    
             - Sur cette première page, en scrollant, il y aura les règles du jeu. 
             
             2ème page : Homepage
@@ -69,7 +69,7 @@ Plan :
             - animation kraken qui mange l'utilisateur qui a perdu
             - bouton qui renvoie à la page principale
             
-Choses à faire : 
+ Choses à faire : 
             - vérifier le site : meme apology, changer le database, corriger "if user tries to log in with same username as another"
             - faire les question pour le jeu - 120 en tout (Juliette) 
             - installer le chat et la mise en page
