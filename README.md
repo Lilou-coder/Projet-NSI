@@ -4,21 +4,21 @@ Projet NSI avec Juliette CHEM-LENHOF, Alexandre EGUERRE, Lilou COLLE
 
  Calendrier : 
             
-            Semaine 1 : Choisir et définir le projet + créer le ReadMe ainsi que s'inscrire sur Github. 
+            Semaine 1 : Choisir et définir le projet + créer le ReadMe ainsi que s'inscrire sur Github ( Lilou, Alexandre, Juliette)
             Semaine 2 : Definition du cahier des charges + description précises de chaque page du jeu + choisir le nom du jeu ("Kraken")
-            Semaine 3 : Definir le calendrier et s'attribuer les tâches 
+            Semaine 3 : Definir le calendrier et s'attribuer les tâches ( Lilou, Alexandre, Juliette)
             Semaine 4 : Finir la base du site web et perfectionner les bugs + clear and change database (Lilou) + questions ( Juliette et Alexandre) 
-            Semaine 5 : Page numéro 3 et 4
-            Semaine 6 : Page 5 - installer designe ( time, variable qui compte le score, choix des questions - dictionnaire? )
-            Semaine 7 : Page 5 - affichage des questions et réponses + bonus?
-            Semaine 8 : Finaliser page 5 
-            Semaine 9 : Page 6 - animation : deux bateaux représentant les deux joueurs et le kraken englouti celui du perdant 
-            Semaine 10 : Finalisation et debuggage du jeu - button return, and revenge ( * On est optimiste ) 
+            Semaine 5 : Page numéro 3 (Lilou, Juliette) et 4 (Alexandre)
+            Semaine 6 : Page 5 - installer designe (Juliette) + vision des paramètres: time( Alexandre), variable qui compte le score( Alexandre), choix des questions - dictionnaire? (Lilou) ) 
+            Semaine 7 : Page 5 - affichage des questions (Juliette) et réponses (Lilou) + bonus? (Alexandre)
+            Semaine 8 : Finaliser page 5 ( Lilou, Alexandre, Juliette)
+            Semaine 9 : Page 6 - animation : deux bateaux représentant les deux joueurs et le kraken englouti celui du perdant (Alexandre, Juliette) + vérification du fonctionnement (Lilou)
+            Semaine 10 : Finalisation et debuggage du jeu - button return, and revenge ( * On est optimiste ) ( Lilou, Alexandre, Juliette)
             Semaine 11 : design (Juliette) et vérification du fonctionnement (Lilou et Alexandre) 
             Semaine 12 : installation du chat (pop-up) (Lilou, Alexandre, Juliette) 
             Semaine 13 : installation du chat (pop-up) (Lilou, Alexandre, Juliette)
-            Semaine 14 : Finaliser / debuger
-            Semaine 15 : Finaliser / debuger
+            Semaine 14 : Finaliser / debuger (Lilou, Alexandre, Juliette)
+            Semaine 15 : Finaliser / debuger (Lilou, Alexandre, Juliette)
             
 
 Notre idée :Kraken
