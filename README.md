@@ -70,5 +70,9 @@ Notre idée :Kraken
             - animation kraken qui mange l'utilisateur qui a perdu
             - bouton qui renvoie à la page principale
             
-            Attribution des rôles : 
+            Choses à faire : 
+            - vérifier le site : meme apology, changer le database, corriger "if user tries to log in with same username as another"
+            - faire les question pour le jeu
+            - installer le chat et la mise en page
+            - avoir une nouvelle page pour acceui
            
