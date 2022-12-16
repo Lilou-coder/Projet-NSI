@@ -1,6 +1,26 @@
 # Projet-NSI
 Projet NSI avec Juliette CHEM-LENHOF, Alexandre EGUERRE, Lilou COLLE
 
+
+ Calendrier : 
+            
+            Semaine 1 : Choisir et définir le projet + créer le ReadMe ainsi que s'inscrire sur Github. 
+            Semaine 2 : Definition du cahier des charges + description précises de chaque page du jeu + choisir le nom du jeu ("Kraken")
+            Semaine 3 : Definir le calendrier et s'attribuer les tâches 
+            Semaine 4 : 
+            Semaine 5 : 
+            Semaine 6 : 
+            Semaine 7 : 
+            Semaine 8 : 
+            Semaine 9 : 
+            Semaine 10 : 
+            Semaine 11 : 
+            Semaine 12 : 
+            Semaine 13 : 
+            Semaine 14 :
+            Semaine 15 : 
+            
+
 Notre idée :Kraken
             
             Un site intéractif où les utilisateur pourront se confronter à des questions de culture générale et communiquer simultanément.
@@ -50,10 +70,5 @@ Notre idée :Kraken
             - animation kraken qui mange l'utilisateur qui a perdu
             - bouton qui renvoie à la page principale
             
-            
-            
-            
-            
-            
-            
-            
+            Attribution des rôles : 
+           
