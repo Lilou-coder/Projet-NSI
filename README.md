@@ -84,6 +84,7 @@ Notre idée :Kraken
             
             
 Questions Geographie:
+           
            1-Parmis les etats suivants, lequel n'est pas membre du Commonwealth 
               1)les Etats-Unis
               2)l'Inde
