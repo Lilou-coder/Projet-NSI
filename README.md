@@ -44,8 +44,8 @@ Notre idée :Kraken
             - Sur cette première page, en scrollant, il y aura les règles du jeu. 
             
             2ème page : Homepage
-            - Après s'être connécté, il y aura sur le côté chat une rubrique chat avec ses amis. Ce chat reste tout le temps, même en jouant
             - Bouton play, qui accédera à une autre page
+            - Bouton contactez nous : si le joueur a une idée ou un bug, il peut nous contacter
             
             3ème page : choisir le thème
             - 4 bouton : Histoire, Géo, Maths, SVT - décidera des questions 
@@ -59,7 +59,6 @@ Notre idée :Kraken
             
             5ème page : gameplay
             - en haut à gauche le temps dans une case qui s'écoule et qui se remet au max à chaque question
-            - à droite le chat
             - la question en haut centrée
             - quatres cases avec les réponses
             - plus l'utilisateur prend du temps à repondre, moins il y a de points
@@ -74,18 +73,14 @@ Notre idée :Kraken
             
             - vérifier le site : meme apology, changer le database, corriger "if user tries to log in with same username as another"
             - faire les question pour le jeu - 120 en tout (Juliette) 
-            - installer le chat et la mise en page
             - avoir une nouvelle page pour le jeu en lui même qui n'apparait que lorsqu'on appuie sur le bouton 'jouer' sur le homepage
-            - deux autres pages pour les paramètres et les 
+            - une page pour les paramètres
             - créer le logo
             - créer les animations 
             - installer le systeme de bonus : encre, enlever deux réponses, regarder la réponse de l'autre
             - créer la page intéractif pour le jeux avec les boutons 
-            - chat, un onglet volant qui apparaît au début d'une partie et qui se termine à la fin 
-            - pop-ups et notifications 
             - design du site (Juliette) 
             - refaire les catégories du database (Lilou) 
-            - Inviter quelqu'un à jouer avec
             
             
             
