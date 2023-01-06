@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Joingame
+{% endblock %}
+
+{% block main %}
+
+    <form action="/joingame" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="game_code" placeholder="Code game" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit" href="game.html">Rejoindre le jeu</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Creategames
+{% endblock %}
+
+{% block main %}
+
+<div class="blankspace">
+
+    <label for="cars">Choose a subject:</label>
+
+    <select name="subject" >
+        <option value="history">History</option>
+        <option value="science">Science</option>
+        <option value="maths">Maths</option>
+        <option value="geography">Geography</option>
+    </select>
+
+    <input autocomplete="off" autofocus class="form-control" name="number_of_questions" placeholder="Number of questions" min="1" max="15" type="number">
+    <input autocomplete="off" autofocus class="form-control" name="time" placeholder="Time for each question" min="3" max="20" type="number">
+
+    <button class="btn btn-primary" type="submit" >Submit</button>
+    
+
+</div>
+
+
+{% endblock %}

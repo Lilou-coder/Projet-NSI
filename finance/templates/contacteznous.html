@@ -1,0 +1,48 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Contactez-nous
+{% endblock %}
+
+{% block main %}
+    <p><i> Have an idea you would like to share? Send us an email and we'll get back to you shortly</i></p>
+    <form action="/contacteznous" method="post" class="needs-validation">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom01">First name</label>
+                <input type="text" class="form-control" name="first_name" placeholder="First name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom02">Last name</label>
+                <input type="text" class="form-control" name="last_name" placeholder="Last name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationCustomUsername">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    </div>
+                    <input type="text" class="form-control" name="email" placeholder="Email" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please submit an email.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Idea</label>
+            <input class="form-control" name="idea" rows="3" placeholder="Write idea here..." required></input>
+            <div class="invalid-feedback">
+                Please provide an idea.
+            </div>
+        </div>
+        <button class="btn btn-primary button" type="submit" name="feedbackform">Submit idea</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,104 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #470f6c;
+}
+nav .navbar-brand .red
+{
+    color: #84699a;
+}
+
+.text
+{
+    color:#47374f;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+
+.fixedButton{
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    padding: 20px;
+}
+.roundedFixedBtn{
+  height: 60px;
+  line-height: 50px;  
+  width: 60px;  
+  font-size: 4em;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #1f687e;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button {
+    background-color: #1f687e; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+/* unvisited link */
+a:link {
+color: white;
+}
+/* visited link */
+a:visited {
+color: white;
+}
+
+/* mouse over link*/
+a:hover {
+    color: white;
+}
+
+.blankspace{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control{
+    min-width: 100%;
+}
