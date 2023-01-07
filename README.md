@@ -353,7 +353,175 @@ Questions Histoire:
                         2)La France récupère le Canada
                         3)L’Espagne perd les 13 colonies
                         4)L’Angleterre gagne la Californie
-
+                        
+                        
+                        
+Questions SVT: 
+           1-Combien de degrés comporte l’échelle de Richter permettant de mesurer l’énergie libérée lors d’un séisme ?
+             1)en theorie un nombre infini
+             2)7
+             3)11
+             4)9
+           2-Quel animal est le plus gros du monde? 
+             1)Baleine bleu
+             2)Rhinoceros 
+             3)Baleine blanche 
+             4)Elephant 
+           3-Quel animal est Bambi?
+             1)Biche 
+             2)Cerf
+             3)Grenouille 
+             4)Singe 
+           4-Quel animal ne boit pas d'eau? 
+             1)Koala 
+             2)Chat
+             3)Panda 
+             4)Tortue 
+           5-Quel animal insolite a été retrouvé à Rennes le 1er juillet 2016? 
+             1)Cachalot 
+             2)Dauphin
+             3)Beluga 
+             4)Buffle 
+           6-Quel animal dort le plus? 
+             1)Koala 
+             2)Paresseux
+             3)Chat
+             4)Chameaux 
+           7-Quel animal a pour nom scientifique "Passer domesticus"?
+             1)Moineau 
+             2)Panda 
+             3)Paresseux 
+             4)Chat
+           8-Quel est le nom scientifique de la truite? 
+             1)Salmo marmoratus
+             2)Truitus maurus 
+             3)Bos taurus taurus
+             4)Rhincoson typus
+           9-Quel animal a pour nom scientifique "Scorpio maurus"? 
+             1)Arachnide
+             2)Oiseau
+             3)Moustique 
+             4)Escargot 
+           10-Quel est le nom scientifique des loup gris? 
+             1)Canis lupus 
+             2)Chelonia lupus 
+             3)Lupus grisulus 
+             4)Felis sylvestris catus
+           11-Un taureau peut-il porter un bébé dans son ventre ?
+             1)Non car c'est un mâle
+             2)Oui car la femelle ne peut pas
+             3)Non car c'est un ovipare
+             4)Oui car c'est un vivipare 
+           12-Quel animal est ovipare?
+             1)Le criquet
+             2)La vache
+             3)La chèvre
+             4)Le panda
+           13-Quel animal est vivipare?
+             1)L'éléphant
+             2)Le crocodile
+             3)Le moineau
+             4)Le criquet
+           14-Qu'est-ce qu'un animal vivipare?
+             1)C'est un animal dont l'embryon se développe à l'intérieur de la mère
+             2)C'est un animal qui pond des œufs pour se reproduire
+             3)C'est un animal dont les oeufs sont à l'intérieur de la femelle
+             4)C'est un animal qui pond des embryons
+           15-Les œufs sont-ils toujours entourés d'une coquille?
+             1)Non, certaines espèces animales ont des œufs mous
+             2)Non, la poule est la seule espèce à avoir des œufs avec une coquille
+             3)Oui, les œufs sont toujours entourés d'une coquille pour les protéger
+             4)Oui sauf pour les serpents
+           16-A quel ordre d'animaux appartient l'ornithorynque? 
+             1)Monotrèmes
+             2)Anseriformes 
+             3)Diprotodontes
+             4)Rongeurs 
+           17-Quel est l’animal qui retint l’attention du naturaliste et paléontologue Charles Darwin lors de son voyage dans l’archipel des Galapagos et dont l’observation des particularismes insulaires a participé de sa théorie de l’évolution sur l’origine des espèce?
+             1)Pinson
+             2)Iguane
+             3)Tortue Géante
+             4)Ver de Terre 
+           18-De quelle espèce de primate l’être humain actuel est-il le plus proche génétiquement ?
+             1)Chimpanzé 
+             2)Bonobo
+             3)Gorille 
+             4)Orang-Outan
+           19-De quels animaux les lamantins et les dugongs sont-ils les plus proches dans la liste ci-dessous ?
+             1)Elephants 
+             2)Dauphins 
+             3)Hippopotames 
+             4)Phoques 
+           20-Combien existe-t-il d’espèces de lions vivant actuellement ?
+             1)Une seule 
+             2)Deux 
+             3)Huit
+             4)Vingt 
+           21-Un de ces animaux n’est pas un primate : lequel ?
+             1)Couscous 
+             2)Aye-Aye 
+             3)Galago 
+             4)Loris 
+           22-Parmi les 4 espèces ci-dessous, il y a un intrus qui ne fait pas partie des Ophidiens : lequel ?
+             1)Orvet 
+             2)Boa constricteur
+             3)Cobra 
+             4)Vipere 
+           23-Lequel de ces animaux n'est pas un rongeur? 
+             1)Musaraigne
+             2)Castor 
+             3)Chien de prairie 
+             4)Capybara
+           24-Combien existe-t-il officiellement d'especes d'éléphant? 
+             1)3
+             2)2
+             3)1
+             4)4
+           25-Parmi ces 4 oiseaux, lequel n’appartient pas à l’ordre des Psittaciformes (perroquets et perruches) ?
+             1)Macareux moine 
+             2)Cacatoes 
+             3)Loris
+             4)Conures
+           26-Quel continent est constitué de glace et entouré d'eau? 
+             1)Pôle sud 
+             2)Pôle nord
+             3)Les deux 
+             4)Ni l'un ni l'autre
+           27-Où vit le petit pingouin ?
+             1)Pôle nord 
+             2)Pôle sud 
+             3)Les deux 
+             4)Ni l'un ni l'autre 
+           28-Parmi les 4 caractéristiques de l'ornithorynque ci-dessous, il en est une qui est fausse : laquelle ?
+             1)Il fait son nid dans un arbre 
+             2)Il pond des oeufs 
+             3)Il est venimeux 
+             4)Son pelage est fluorescent dans la nuit 
+           29-Parmi les 4 espèces d'oiseaux ci-dessous, il en est une qui n'est pas présente en Australie : laquelle ?
+             1)Kakapo
+             2)Emeu 
+             3)Cacatoès à Huppe Jaune 
+             4)Casoar à casque 
+           30-Comment les Australiens surnomment-ils les petits des marsupiaux (koala, kangourou, etc) ?
+             1)Joey
+             2)Bibi
+             3)Teddy
+             4)Winny 
+             
+          
+           
+          
+           
+            
+          
+        
+             
+        
+             
+             
+             
+            
+         
 
             
             
