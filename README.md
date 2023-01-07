@@ -357,6 +357,7 @@ Questions Histoire:
                         
                         
 Questions SVT: 
+
            1-Combien de degrés comporte l’échelle de Richter permettant de mesurer l’énergie libérée lors d’un séisme ?
              1)en theorie un nombre infini
              2)7
