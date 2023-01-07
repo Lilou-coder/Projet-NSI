@@ -236,7 +236,7 @@ Questions Geographie:
               3)Bordeaux 
               4)Nice 
              
-Questions Histoire             
+Questions Histoire:             
             1-Lequel de ces pharaons a régné en premier?
                        1)Akhénaton
                        2)Cléopâtre
