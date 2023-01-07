@@ -353,7 +353,42 @@ Questions Histoire:
                         2)La France récupère le Canada
                         3)L’Espagne perd les 13 colonies
                         4)L’Angleterre gagne la Californie
-                        
+            24-En France, en quelle année a débuté la IIIe République ?
+                        1)1870
+                        2)1789
+                        3)1804
+                        4)1853
+            25- En quelle année, la guerre d’Algérie a-t-elle pris fin ?
+                        1)1962
+                        2)1945
+                        3)1918
+                        4)1998
+            26-En quelle année a début la guerre de 30 ans ?
+                        1)1618
+                        2)1789
+                        3)1492
+                        4)1765
+            27-En quelle année, Louis XVI a-t-il été exécuté ?
+                        1)1793
+                        2)1789
+                        3)1802
+                        4)1814
+            28-En quelle année, la première guerre du Golfe a-t-elle pris fin ?
+                        1)1991
+                        2)2001
+                        3)1958
+                        4)1913            
+            29-En quelle année, le premier vol en montgolfière a-t-il eu lieu ?
+                        1)1783
+                        2)1654
+                        3)1698
+                        4)1704            
+            30-En quelle année, la première voiture a-t-elle été inventée?
+                        1)1885 
+                        2)1904
+                        3)1796
+                        4)1810
+                         
                         
                         
 Questions SVT: 
@@ -438,7 +473,7 @@ Questions SVT:
              2)Anseriformes 
              3)Diprotodontes
              4)Rongeurs 
-           17-Quel est l’animal qui retint l’attention du naturaliste et paléontologue Charles Darwin lors de son voyage dans l’archipel des Galapagos et dont l’observation des particularismes insulaires a participé de sa théorie de l’évolution sur l’origine des espèce?
+           17-Quel est l’animal qui retint l’attention du naturaliste et paléontologue Charles Darwin lors de son voyage dans l’archipel des Galapagos et dont                       l’observation des particularismes insulaires a participé de sa théorie de l’évolution sur l’origine des espèces?
              1)Pinson
              2)Iguane
              3)Tortue Géante
@@ -509,8 +544,158 @@ Questions SVT:
              3)Teddy
              4)Winny 
              
+ Questions Maths: 
           
-           
+           1-Quel est le carré de 25
+             1)625
+             2)550
+             3)725
+             4)805
+           2-D'après le théorème de pythagore:
+             1)Si un triangle ABC est rectangle en C, alors : AB² = AC² + BC²
+             2)Si un triangle ABC est rectangle en C, alors : C = A + B
+             3)Si un triangle ABC est rectangle en C, alors : AC² = AB² + BC²
+             4)Si un triangle ABC est rectangle en C, alors : C² = A² + B²
+           3-La trigonométrie s'applique seulement aux:
+             1)Triangles rectangles
+             2)Triangles isocèles
+             3)Triangles équilatéraux
+             4)Triangles circulaires
+           4-Pi a pour valeur approximative:
+             1)3.14159265359
+             2)3.14155848968
+             3)3.14154873844
+             4)3.14154845384
+           5-La formule de la surface d’un rectangle est:
+             1)L*l
+             2)(L+l)*2
+             3)2L+2l
+             4)L/l
+           6-Qu'est-ce qu'un ellipsoïde?
+             1)une surface du second degré de l'espace euclidien à trois dimensions
+             2)une surface du troisième degré de l'espace pythagoricien à trois dimensions
+             3)un rond
+             4)une figure inconcevable représentant la forme de l'univers
+           7-1 hectomètre vaut:
+             1)100m
+             2)10000m
+             3)10^8m
+             4)10^18m
+           8-Quelle est la racine carrée de 542?
+             1)23.28
+             2)35.18
+             3)19.65
+             4)23.07
+           9-Comment se nomme la puissance 4?
+             1)puissance quatrième
+             2)puissance delta
+             3)puissance quattuor
+             4)puissance quadratique?
+           10-Quelle est la formule qui permet de calculer l’aire d’une sphère ?
+             1)4 x pi x r²
+             2)pi x r x 4
+             3)pi² x 4 x r²
+             4)r x pi x volume
+           11-Qu’est-ce qu’un triangle isocèle ?
+             1)Un triangle qui a deux côtés de même longueur
+             2)Un triangle qui a trois côtés de même longueur
+             3)Un triangle qui a 2 angles droits
+             4)Un triangle qui a un angle droit
+           12-Parmi ces figures, laquelle n’est pas un polygone ?
+             1)cercle
+             2)carré
+             3)trapèze
+             4)triangle
+           13- La somme des angles d’un triangle est égale à ?
+             1)180°
+             2)360°
+             3)270°
+             4)90°
+           14-Soustrayez mentalement 831 et 479
+             1)352
+             2)372
+             3)362
+             4)382
+           15-
+             1)
+             2)
+             3)
+             4)
+           16-
+             1)
+             2)
+             3)
+             4)
+           17-
+             1)
+             2)
+             3)
+             4)
+           18-
+             1)
+             2)
+             3)
+             4)
+           19-
+             1)
+             2)
+             3)
+             4)
+           20-
+             1)
+             2)
+             3)
+             4)
+           21-
+             1)
+             2)
+             3)
+             4)
+           22-
+             1)
+             2)
+             3)
+             4)
+           23-
+             1)
+             2)
+             3)
+             4)
+           24-
+             1)
+             2)
+             3)
+             4)
+           25-
+             1)
+             2)
+             3)
+             4)
+           26-
+             1)
+             2)
+             3)
+             4)
+           27-
+             1)
+             2)
+             3)
+             4)
+           28-
+             1)
+             2)
+             3)
+             4)
+           29-
+             1)
+             2)
+             3)
+             4)
+           30-
+             1)
+             2)
+             3)
+             4)
           
            
             
