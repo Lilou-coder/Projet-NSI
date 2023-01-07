@@ -236,117 +236,118 @@ Questions Geographie:
               3)Bordeaux 
               4)Nice 
              
+Questions Histoire             
             1-Lequel de ces pharaons a régné en premier?
                        1)Akhénaton
                        2)Cléopâtre
                        3)Toutânkhamon
                        4)Ramsès II
-                    2-Quel est le premier peuple à obtenir le droit de vote des citoyens?
+            2-Quel est le premier peuple à obtenir le droit de vote des citoyens?
                        1)Les Anthéniens
                        2)Les Romains
                        3)Les Scandinaves
                        4)Les Cambodgiens
-                    3-Qui est l’ennemi de la France pendant la guerre de Cent ans?
+            3-Qui est l’ennemi de la France pendant la guerre de Cent ans?
                        1)L'Angletterre
                        2)L'Espagne
                        3)La Prusse
                        4)L'Empire Ottoman
-                    4-Quelle est l’année de la Déclaration d’Indépendance des Etats-Unis?
+            4-Quelle est l’année de la Déclaration d’Indépendance des Etats-Unis?
                        1)1776
                        2)1802
                        3)1658
                        4)1697
-                     5-Quelle bataille de Napoléon est une défaite ?
+            5-Quelle bataille de Napoléon est une défaite ?
                        1)Warterloo
                        2)Austerlitz
                        3)Wagram
                        4)Tea Party
-                     6-En quelle année a été détruit le mur de Berlin ?
+            6-En quelle année a été détruit le mur de Berlin ?
                         1)1989
                         2)1945
                         3)1991
                         4)1947
-                     7-En quelle année a eut lieux la crise des missiles de Cuba?
+            7-En quelle année a eut lieux la crise des missiles de Cuba?
                         1)1962
                         2)1974
                         3)2001
                         4)2004
-                     8-En quelle année a été conclu le pacte de Varsovie?
+            8-En quelle année a été conclu le pacte de Varsovie?
                         1)1955
                         2)1945
                         3)1939
                         4)1918
-                     9-En quelle année la guerre de corée a-t-elle commencée?
+            9-En quelle année la guerre de corée a-t-elle commencée?
                         1)1950
                         2)1962
                         3)1948
                         4)1964
-                     10-Quand l'écriture a-t-elle inventé?
+            10-Quand l'écriture a-t-elle inventé?
                         1)-3200
                         2)-5400
                         3)-6000
                         4)-4600
-                     11-En 1 500 av. J.-C., la conquête du territoire français commence avec?
+            11-En 1 500 av. J.-C., la conquête du territoire français commence avec?
                         1)les Celtes
                         2)les Arabes
                         3)les Belges
                         4)les romains
-                     12-Clovis Ier est le fondateur de la dynastie?
+            12-Clovis Ier est le fondateur de la dynastie?
                         1)mérovingienne
                         2)carolingienne
                         3)des Louis
                         4)des Charles
-                     13-Charlemagne est couronné empereur d’Occident par le pape Léon III en l’an?
+            13-Charlemagne est couronné empereur d’Occident par le pape Léon III en l’an?
                         1)800
                         2)600
                         3)700
                         4)900
-                     14-Le premier roi des Francs fut?
+            14-Le premier roi des Francs fut?
                         1)Clovis 1er
                         2)Clovis 2nd
                         3)Charlemagne
                         4)Louis 1er
-                     15-Quelle est la date historique de la célébration de l’Épiphanie pour les catholiques ?
+            15-Quelle est la date historique de la célébration de l’Épiphanie pour les catholiques ?
                         1)6 janvier
                         2)4 janvier
                         3)12 janvier
                         4)2 jamvier
-                     16-En quelle année est né Charles de Gaulle ?
+            16-En quelle année est né Charles de Gaulle ?
                         1)1890
                         2)1860
                         3)1900
                         4)1880
-                     17-Comment s'appelait l'héritier du trône d'Autriche durant la première guerre mondiale ?
+            17-Comment s'appelait l'héritier du trône d'Autriche durant la première guerre mondiale ?
                         1)François-Ferdinand
                         2)Francois-Maximilien
                         3)Francois-Karl
                         4)François-Alexandre
-                     18-Quand l'armistice de la 1er guerre mondiale a-t-il été signé?
+            18-Quand l'armistice de la 1er guerre mondiale a-t-il été signé?
                         1)11 novembre 1918
                         2)15 novembre 1918
                         3)8 novembre 1918
                         4)21 novembre 1918
-                     19-Quand La Russie signe-t-elle un traité de paix séparé avec l'Allemagne ?
+            19-Quand La Russie signe-t-elle un traité de paix séparé avec l'Allemagne ?
                         1)1917
                         2)1918
                         3)1920
                         4)1914
-                     20-Quelle guerre a duré de 1756 à 1763 ?
+            20-Quelle guerre a duré de 1756 à 1763 ?
                         1)La guerre d’indépendance
                         2)La guerre de Trente Ans
                         3)La guerre de Sept Ans
                         4)La guerre de Succession d’Autriche
-                     21-Que se passe-t-il le 16 décembre 1773 ?
+            21-Que se passe-t-il le 16 décembre 1773 ?
                         1)La Boston Tea Party
                         2)Le Sugar Act
                         3)La Déclaration d’indépendance
                         4)Le traité de Paris
-                     22-Quelle est la capitale politique et intellectuelle de la Nouvelle-Angleterre ?
+            22-Quelle est la capitale politique et intellectuelle de la Nouvelle-Angleterre ?
                         1)Boston
                         2)Philadelphie
                         3)New York
                         4)Baltimore
-                     23-Quelles sont les conséquences du traité de Paris ?
+            23-Quelles sont les conséquences du traité de Paris ?
                         1)La France perd la Louisiane
                         2)La France récupère le Canada
                         3)L’Espagne perd les 13 colonies
