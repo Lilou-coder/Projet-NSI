@@ -589,7 +589,7 @@ Questions SVT:
            9-Comment se nomme la puissance 4?
              1)puissance quatrième
              2)puissance delta
-             3)puissance quattuor
+             3)puissance quatuor
              4)puissance quadratique?
            10-Quelle est la formule qui permet de calculer l’aire d’une sphère ?
              1)4 x pi x r²
@@ -611,91 +611,91 @@ Questions SVT:
              2)360°
              3)270°
              4)90°
-           14-Soustrayez mentalement 831 et 479
+           14-Soustrayez 831 et 479:
              1)352
              2)372
              3)362
              4)382
-           15-
-             1)
-             2)
-             3)
-             4)
-           16-
-             1)
-             2)
-             3)
-             4)
-           17-
-             1)
-             2)
-             3)
-             4)
-           18-
-             1)
-             2)
-             3)
-             4)
-           19-
-             1)
-             2)
-             3)
-             4)
-           20-
-             1)
-             2)
-             3)
-             4)
-           21-
-             1)
-             2)
-             3)
-             4)
-           22-
-             1)
-             2)
-             3)
-             4)
-           23-
-             1)
-             2)
-             3)
-             4)
-           24-
-             1)
-             2)
-             3)
-             4)
-           25-
-             1)
-             2)
-             3)
-             4)
-           26-
-             1)
-             2)
-             3)
-             4)
-           27-
-             1)
-             2)
-             3)
-             4)
-           28-
-             1)
-             2)
-             3)
-             4)
-           29-
-             1)
-             2)
-             3)
-             4)
-           30-
-             1)
-             2)
-             3)
-             4)
+           15-Multipliez 16 et 21:
+             1)336
+             2)326
+             3)346
+             4)306
+           16-Quel est le carré de 17?
+             1)289
+             2)306
+             3)372
+             4)323
+           17-Quel est l'approximation de l'inverse de 7?
+             1)0.1429
+             2)0.1754
+             3)0.9842
+             4)0.1483
+           18-Comment signifie généralement ce symbole △?
+             1)Une différence
+             2)Le reste d'une division euclidienne
+             3)Le cube d'un nombre
+             4)Le théorème de Pythagore
+           19-Laquelle de ces affirmations n'est pas un axiome d'euclide ?
+             1)Tout point est défini sur une surface plane
+             2)Toute droite finie peut être prolongée infiniment et continûment.
+             3)Tous les angles droits sont égaux entre eux.
+             4)Avec tout point comme centre et tout rayon, on peut tracer une circonférence.
+           20-Qui est le premier mathématicien a avoir créé une géométrie non euclidienne ?
+             1)Carl Friedrich Gauss
+             2)Phytagore
+             3)Euclide
+             4)Henri Pointcarré
+           21-Comment se nomme le théorème énoncé par Gödel ?
+             1)Le théorème d'incomplétude
+             2)Le théorème d'incertitude
+             3)Le théorème intergéométrique
+             4)le théorème extra-géométrique
+           22-Comment se nome un polygone possédant 7 faces ?
+             1)Heptagone
+             2)Septagone
+             3)Tétragone
+             4)Epsigone
+           23-Lequel de ces problèmes du millénaire a été résolue ?
+             1)Conjecture de Poincaré
+             2)Conjecture de Hodge
+             3)Conjecture de Birch et Swinnerton-Dyer
+             4)Équations de Yang-Mills
+           24-Combien de problèmes du millénaire ne sont pas résolues ?
+             1)7
+             2)11
+             3)3
+             4)8
+           25-Qui est le premier mathématicien connu de l’histoire ?
+             1)Thalès de Milet
+             2)Zenon d'Elée
+             3)Hippase de Métaponte
+             4)Eudoxe de Cnide
+           26-Que vaut l'opposé de l’inverse du carré de 2
+             1)-0.25
+             2)-0.4
+             3)0.75
+             4)0.25
+           27-Multipliez 24 et 62
+             1)1488
+             2)1248
+             3)2044
+             4)1869
+           28-Le théorème de talent concerne uniquement:
+             1)Les triangles
+             2)les cercles euclidiens
+             3)les droites perpendiculaires
+             4)LA tangente d'un cercle
+           29-Si le discriminant d'une équation du second degré est négatif, alors:
+             1)Il n'y a pas de solutions pour cette équation dans l'ensemble des réels
+             2)La formule quadratique est applicable
+             3)L'équation est fausse
+             4)L'équation n'est pas du second degré
+           30-Diviser reviens à:
+             1)multiplier pas son inverse
+             2)multiplier par son opposé
+             3)multiplier à la puissance -2
+             4)multiplier par sa racine carrée
           
            
             
