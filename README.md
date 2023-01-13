@@ -473,7 +473,7 @@ Questions SVT:
              2)Anseriformes 
              3)Diprotodontes
              4)Rongeurs 
-           17-Quel est l’animal qui retint l’attention du naturaliste et paléontologue Charles Darwin lors de son voyage dans l’archipel des Galapagos et dont                       l’observation des particularismes insulaires a participé de sa théorie de l’évolution sur l’origine des espèces?
+           17-Quel est l’animal qui retint l’attention du naturaliste et paléontologue Charles Darwin lors de son voyage dans l’archipel des Galapagos et dont l’observation des particularismes insulaires a participé de sa théorie de l’évolution sur l’origine des espèces?
              1)Pinson
              2)Iguane
              3)Tortue Géante
