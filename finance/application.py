@@ -114,8 +114,14 @@ def joingame(gamecode):
         return apology("Incorrect game code", 403)
 
     # Insert into database new player
-    rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
-    
+    player_exists = db.execute("SELECT user_id FROM actif_games WHERE game_code=?", gamecode)
+    players_found = False
+    for user in player_exists:
+        if session["user_id"] != int(user["user_id"]):
+            players_found=True
+            rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
+            break
+
     # Find status of game
     progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
     if not progress:
@@ -139,7 +145,7 @@ def creategame():
         game_code = ''.join(random.choice(letters) for i in range(6))
 
         # Store information
-        rows = db.execute("INSERT INTO actif_games (user_id, game_code, date, master, actif_question, time_for_each_question, subject, number_of_questions) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", session["user_id"], game_code, datetime.now(), True, "-1", time, subject, number_of_questions)
+        rows = db.execute("INSERT INTO actif_games (user_id, game_code, date, master, actif_question, question_time_stamp, time_for_each_question, subject, number_of_questions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", session["user_id"], game_code, datetime.now(), True, "-1", datetime.now(), time, subject, number_of_questions)
         
         return redirect("/games/" + game_code + "/admin")
 

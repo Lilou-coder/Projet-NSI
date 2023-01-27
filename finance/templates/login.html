@@ -5,13 +5,18 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/login" method="post">
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+<img src= "https://www.silhouettepng.com/wp-content/uploads/2/Octopus-PNG-Silhouette.png" width=30% height=30% > 
+
+
+    <form action="/login" method="post" style="width: 300px" >
+        <div class="form-group" >
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" 
+            style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
+          </div>
+          <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" 
+            style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         </div>
-        <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <button class="btn btn-primary" type="submit" style=" background: rgba(69, 154, 228, 0.915) ; border-color: rgb(0, 0, 0); color: rgb(255, 255, 255)">Log In</button>
     </form>
 {% endblock %}

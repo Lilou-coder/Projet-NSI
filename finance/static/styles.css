@@ -16,7 +16,7 @@ nav .navbar-brand .red
 
 .text
 {
-    color:#47374f;
+    color:#4f4337;
 }
 
 main .form-control
@@ -64,14 +64,15 @@ main img
 }
 
 .button {
-    background-color: #1f687e; /* Blue */
-    border: none;
-    color: white;
+    background-color: #5D3FD3; /* Blue */
+    border-radius: 10% ;
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 26px;
 }
 /* unvisited link */
 a:link {
@@ -84,15 +85,23 @@ color: white;
 
 /* mouse over link*/
 a:hover {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .blankspace{
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 200px;
+    padding-bottom: 200px;
     margin-left: auto;
     margin-right: auto;
 }
+
+.blank{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .center{
     margin-left: auto;

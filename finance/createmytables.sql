@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS "actif_games"(
     "question_time_stamp" TEXT NOT NULL,
     "time_for_each_question" NOT NULL,
     "subject" TEXT NOT NULL,
-    "number_of_questions" NOT NULL, );
+    "number_of_questions" NOT NULL);
 
 CREATE TABLE IF NOT EXISTS "actif_players"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 

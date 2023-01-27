@@ -6,7 +6,7 @@
 
 {% block main %}
 
-<div class="blankspace">
+<form class="blankspace" action="/creategame" method="post">
 
     <label for="cars">Choose a subject:</label>
 
@@ -20,10 +20,10 @@
     <input autocomplete="off" autofocus class="form-control" name="number_of_questions" placeholder="Number of questions" min="1" max="15" type="number">
     <input autocomplete="off" autofocus class="form-control" name="time" placeholder="Time for each question" min="3" max="20" type="number">
 
-    <button class="btn btn-primary" type="submit" >Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
     
 
-</div>
+</form>
 
 
 {% endblock %}
