@@ -19,10 +19,37 @@
 
 {% block main %}
 
+    <audio controls autoplay loop>
+    <source src="https://vgmsite.com/soundtracks/mario-paint-game-rip/beevmkcpjb/01%20Mario%20Paint.mp3" type="audio/mp3">
+    </audio>
+
     {% if progress == -1 %}
     <h1>Please Wait</h1>
     {% else %}
-    <h1>Game is starting</h1>
+    <table class="table tablestriped">
+        <thead>
+            <tr>
+                <th class="text-start">Question</th>
+            </tr>
+        </thead>
+        {% for question in questions %}
+        <tr>
+            <td class="text-start">{{ question["question"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table tablestriped">
+        <thead>
+            <tr>
+                <th class="text-start">Answers</th>
+            </tr>
+        </thead>
+        {% for answer in answers %}
+        <tr>
+            <td class="text-start">{{ answer["answer"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
     {% endif %}
 
 {% endblock %}

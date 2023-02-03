@@ -28,3 +28,15 @@ CREATE TABLE IF NOT EXISTS "actif_players"(
     "progress" INTEGER NOT NULL,
     FOREIGN KEY ("user_id") REFERENCES "users" ("id"),
     FOREIGN KEY ("game_id") REFERENCES "actif_games" ("game_id"));
+
+CREATE TABLE IF NOT EXISTS "questions"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "subject" TEXT NOT NULL,
+    "question" TEXT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS "answers"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+    "question_id" INTEGER NOT NULL, 
+    "answer" TEXT NOT NULL, 
+    "correct" BOOLEAN NOT NULL, 
+    FOREIGN KEY ("question_id") REFERENCES "questions"("id"));

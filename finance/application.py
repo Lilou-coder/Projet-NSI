@@ -124,10 +124,17 @@ def joingame(gamecode):
 
     # Find status of game
     progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
-    if not progress:
-        pass
+    #if not progress:
+        #pass
         #TODO : handle that case 
-    return render_template("game.html", progress=progress[0]["actif_question"])
+    
+    # Find questions for games
+    subject = db.execute("SELECT subject FROM actif_games WHERE game_code = ?", gamecode)
+    questions = db.execute("SELECT question FROM questions WHERE subject = ?", subject[0]["subject"])
+    id = db.execute("SELECT id FROM questions WHERE subject = ?", subject[0]["subject"])
+    answers = db.execute("SELECT answer FROM answers WHERE question_id = ?", id[0]["id"])
+
+    return render_template("game.html", questions=questions, answers = answers)
 
 
 
