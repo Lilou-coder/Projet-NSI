@@ -20,7 +20,7 @@
 {% block main %}
 
     <audio controls autoplay loop>
-    <source src="https://vgmsite.com/soundtracks/mario-paint-game-rip/beevmkcpjb/01%20Mario%20Paint.mp3" type="audio/mp3">
+        <source src="https://vgmsite.com/soundtracks/mario-paint-game-rip/beevmkcpjb/01%20Mario%20Paint.mp3" type="audio/mp3">
     </audio>
 
     {% if progress == -1 %}
@@ -45,8 +45,11 @@
             </tr>
         </thead>
         {% for answer in answers %}
+        
         <tr>
-            <td class="text-start">{{ answer["answer"] }}</td>
+            <form>
+                <td class="button">{{ answer["answer"] }}</td>
+            </form>
         </tr>
         {% endfor %}
     </table>

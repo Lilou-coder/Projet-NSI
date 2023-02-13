@@ -12,7 +12,7 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, create_email
+from helpers import apology, login_required, insertQuestions, create_email
 
 # Configure application
 app = Flask(__name__)
@@ -43,6 +43,21 @@ db = SQL("sqlite:///kraken.db")
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
 
+# Insert questions into database
+
+#recordsToInsert = [("Geographie", "Quel pays a pour capitale Gaborone ?")
+                   #("Geographie", "Quelle est la capitale de la Suisse ?")
+                   #("Geographie", "Quelle ville compte la plus haute densité de population du monde?")
+                   #("Geographie", "Quel pays est le moins densément peuplé au monde?")
+                   #("Geographie", "De quel pays Beyrouth est-elle la capitale?")
+                   #("Geographie", "De quel pays Londres est-elle la capitale?")
+                   #("Histoire", "Lequel de ces pharaons a régné en premier?")
+                   #("Histoire", "Qui est ennemi de la France pendant la guerre de Cent ans?")
+                   #("SVT", "Quel animal est le plus gros du monde?")]
+
+questions = db.execute("SELECT * FROM questions")
+#if questions == []:
+    #insertQuestions(recordsToInsert)
 
 @app.route("/")
 @login_required
@@ -122,6 +137,8 @@ def joingame(gamecode):
             rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
             break
 
+    # TODO: fix the bug, players don't appear 
+
     # Find status of game
     progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
     #if not progress:
@@ -133,7 +150,7 @@ def joingame(gamecode):
     questions = db.execute("SELECT question FROM questions WHERE subject = ?", subject[0]["subject"])
     id = db.execute("SELECT id FROM questions WHERE subject = ?", subject[0]["subject"])
     answers = db.execute("SELECT answer FROM answers WHERE question_id = ?", id[0]["id"])
-
+    
     return render_template("game.html", questions=questions, answers = answers)
 
 

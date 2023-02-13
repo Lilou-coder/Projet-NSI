@@ -1,12 +1,14 @@
 import os
 import requests
 import urllib.parse
+import sqlite3
 
 from cs50 import SQL
 from flask import redirect, render_template, request, session
 from functools import wraps
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///kraken.db")
@@ -41,6 +43,34 @@ def login_required(f):
     return decorated_function
 
 
+
+def insertQuestions(recordList):
+    try:
+        sqliteConnection = sqlite3.connect('kraken.db')
+        cursor = sqliteConnection.cursor()
+        print("Connected to SQLite")
+
+        # Insert questions into database
+        sqlite_insert_query = """INSERT INTO questions
+                          (subject, question) 
+                          VALUES (?, ?);"""
+
+        cursor.executemany(sqlite_insert_query, recordList)
+
+        # Commit the changes
+        sqliteConnection.commit()
+        print("Total", cursor.rowcount, "Records inserted successfully into SqliteDb_developers table")
+        sqliteConnection.commit()
+
+        # CLose the connection
+        cursor.close()
+
+    except sqlite3.Error as error:
+        print("Failed to insert multiple records into sqlite table", error)
+    finally:
+        if sqliteConnection:
+            sqliteConnection.close()
+            print("The SQLite connection is closed")
 
 
 def create_email(first_name, last_name, email, idea, from_email):
