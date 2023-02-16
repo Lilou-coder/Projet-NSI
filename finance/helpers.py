@@ -44,34 +44,6 @@ def login_required(f):
 
 
 
-def insertQuestions(recordList):
-    try:
-        sqliteConnection = sqlite3.connect('kraken.db')
-        cursor = sqliteConnection.cursor()
-        print("Connected to SQLite")
-
-        # Insert questions into database
-        sqlite_insert_query = """INSERT INTO questions
-                          (subject, question) 
-                          VALUES (?, ?);"""
-
-        cursor.executemany(sqlite_insert_query, recordList)
-
-        # Commit the changes
-        sqliteConnection.commit()
-        print("Total", cursor.rowcount, "Records inserted successfully into SqliteDb_developers table")
-        sqliteConnection.commit()
-
-        # CLose the connection
-        cursor.close()
-
-    except sqlite3.Error as error:
-        print("Failed to insert multiple records into sqlite table", error)
-    finally:
-        if sqliteConnection:
-            sqliteConnection.close()
-            print("The SQLite connection is closed")
-
 
 def create_email(first_name, last_name, email, idea, from_email):
     mail= MIMEMultipart('alternative')

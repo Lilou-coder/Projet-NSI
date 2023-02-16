@@ -1,0 +1,121 @@
+Id,subject,question,answer1,answer2,answer3,answer4,correct_answer
+1,geography,"Parmis les etats suivants, lequel n est pas membre du Commonwealth",Les etats Unis,L Inde,L Australie,Le Ghana,1
+2,geography,Quel pays a pour capitale Gaborone ?,le Zimbabwe,le Botswana,la Tanzanie,le Lesotho,2
+3,geography,Quelle est la capitale de la Suisse ?,Lausanne,Bale,Zuric,Berne,4
+4,geography,Combien d etats federes l Inde compte-t-elle? ,32,29,31,30,2
+5,geography,Quelles sont les langues officielles de l Afghanistan?,Persan et Pashtou,Arabe et Turc,Afghan et Anglais,Hindi et Persan,1
+6,geography,Quelle ville compte la plus haute densite de population du monde?,Delhi,le Caire,Manille,Sanghai,3
+7,geography,Quel pays est le moins densement peuple au monde?,l Australie,l Arabie Saoudite,La Russie,la Mongolie,4
+8,geography,De quel pays Beyrouth est-elle la capitale?,Cambodge,Laos,Syrie ,Liban,4
+9,geography,De quel pays Londres est-elle la capitale?,Royaume-Uni,France,Andorre ,Allemagne,1
+10,geography,Combien y a t il de departements en France dont outre-mer?,98,100,104,96,2
+11,geography,Quel est l autre nom de la France?,l Hexagone,le pays des illuminations,le triangle,la baguette,1
+12,geography,Ou se trouve le Mont-Saint-Michel?,Bretagne,Ile de France,Normandie,cote d azur,3
+13,geography,Combien de volcans d Auvergne sont encore actifs?,0,1,2,4,1
+14,geography,Quelle mer borde la Cote d Azur?,la mer Noire,la mer du Sud,la Manche,la mer Mediterranee,4
+15,geography,Quelle ville de France compte le plus d habitants?,Nice,Lille,Nantes,Toulouse,4
+16,geography,Quel est le fleuve le plus long de France?,la Seine ,le Rhone,La Loire,la Moselle,3
+17,geography,Quel est le sommet le plus haut d Europe?,le Mont Rose,le Mont Blanc,le Kilimandjaro,le Mont Ventoux,2
+18,geography,Combien de regions la France compte-t-elle?,27,22,18,13,3
+19,geography,Avec combien de pays le France metropolitaine a-t-elle une frontiere terrestre?,6,7,8,9,3
+20,geography,a combien de kilometres de Paris se trouve le departement francais le plus eloigne?,9180km,947km,855km,6800km,1
+21,geography,Laquelle de ces iles est francaise?,Hawaii,la Martinique,Sainte-Lucie,la Sardaigne,2
+22,geography,Combien la France metropolitaine compte-t-elle de mers et d oceans autour d elle?,2,3,4,5,3
+23,geography,Quel pourcentage d habitants en France habite en ville?,78 pourcent,82 pourcent,69 pourcent,86 pourcent,2
+24,geography,Depuis quelle ville Francaise le tunnel sous la Manche relie-t-il la France et l Angleterre?,Dunkerque,Calais,le Havre,Dieppe,2
+25,geography,"Parmis ces villes, laquelle se situe le plus au nord de la France?",Lyon,Marseille,Bordeaux,Grenoble,1
+26,geography,Quel departement est le moins peuple de France?,le Gers,le Cher,la Creuze,la Lozere,1
+27,geography,"Depuis 2016, combien y a-t-il de regions en France metropolitaine?",5,13,17,24,2
+28,geography,"En 2018, combien y avait-il d habitants en France?",58.6 millions,64.2 millions,69.5 millions,67.2 millions,4
+29,geography,Quelle est la ville la plus etendue du territoire francais?,Paris,Lyon,Maripasoula,Arles,3
+30,geography,Quelle est la ville la plus vieille de France?,Bordeaux,Beziers,Marseille,Nice,2
+31,history,Lequel de ces pharaons a regne en premier?,Cleopatre,Ramses II,Akhenaton,Toutankhamon,3
+32,history,Quel est le premier peuple a obtenir le droit de vote des citoyens?,Les Romains,Les Antheniens,Les Scandinaves,Les Cambodgiens,2
+33,history,Qui est l ennemi de la France pendant la guerre de Cent ans?,L Angletterre,L Espagne,La Prusse,L Empire Ottoman,1
+34,history,Quelle est l annee de la Declaration d Independance des Etats-Unis?,1802,1658,1697,1776,4
+35,history,Quelle bataille de Napoleon est une defaite ?,Austerlitz,Wagram,Tea Party,Warterloo,4
+36,history,En quelle annee a ete detruit le mur de Berlin ?,1989,1945,1991,1947,1
+37,history,En quelle annee a eu lieu la crise des missiles de Cuba?,1974,2001,1962,2004,3
+38,history,En quelle annee a ete conclu le pacte de Varsovie?,1945,1955,1939,1918,2
+39,history,En quelle annee la guerre de Coree a-t-elle commence?,1962,1948,1964,1950,4
+40,history,Quand l ecriture a-t-elle invente?,-3200,-5400,-6000,-4600,1
+41,history,"En 1 500 av. J.-C., la conquete du territoire francais commence avec?",les Arabes,les Belges,les Celtes,les romains,3
+42,history,Clovis Ier est le fondateur de la dynastie?,carolingienne,merovingienne,des Louis,des Charles,2
+43,history,Charlemagne est couronne empereur d Occident par le pape Leon III en l an?,900,700,600,800,4
+44,history,Le premier roi des Francs fut?,Clovis 1er,Clovis 2nd,Charlemagne,Louis 1er,1
+45,history,Quelle est la date historique de la celebration de l epiphanie pour les catholiques ?,.4 janvier ,.6 janvier,.12 janvier,.2 janvier,2
+46,history,En quelle annee est ne Charles de Gaulle ?,1860,1900,1890,1880,3
+47,history,Comment s appelait l heritier du trone d Autriche durant la premiere guerre mondiale ?,Francois-Maximilien,Francois-Karl,Francois-Alexandre,Francois-Ferdinand,4
+48,history,Quand l armistice de la 1er guerre mondiale a-t-il ete signe?,.11 novembre 1918,.15 novembre 1918,.8 novembre 1918,.21 novembre 1918,1
+49,history,Quand La Russie signe-t-elle un traite de paix separe avec l Allemagne ?,1914,1917,1918,1920,2
+50,history,Quelle guerre a dure de 1756 a 1763 ?,La guerre d independance,La guerre de Trente Ans,La guerre de Sept Ans,La guerre de Succession d Autriche,1
+51,history,Que se passe-t-il le 16 decembre 1773 ?,Le Sugar Act,La Declaration d independance,La Boston Tea Party,Le traite de Paris,3
+52,history,Quelle est la capitale politique et intellectuelle de la Nouvelle-Angleterre ?,Philadelphie,New York,Baltimore,Boston,4
+53,history,Quelles sont les consequences du traite de Paris ?,La France perd la Louisiane,La France recupere le Canada,L Espagne perd les 13 colonies,L Angleterre gagne la Californie,1
+54,history,"En France, en quelle annee a debute la IIIe Republique ?",1804,1870,1789,1853,2
+55,history,"En quelle annee, la guerre d Algerie a-t-elle pris fin ?",1945,1918,1998,1962,4
+56,history,En quelle annee a debut la guerre de 30 ans ?,1618,1492,1765,1789,1
+57,history,"En quelle annee, Louis XVI a-t-il ete execute ?",1789,1802,1793,1814,3
+58,history,"En quelle annee, la premiere guerre du Golfe a-t-elle pris fin ?",,,,,
+59,history,"En quelle annee, le premier vol en montgolfiere a-t-il eu lieu ?",,,,,
+60,history,"En quelle annee, la premiere voiture a-t-elle ete inventee?",,,,,
+61,science,Combien de degres comporte l echelle de Richter permettant de mesurer l energie liberee lors d un seisme ?,,,,,
+62,science,Quel animal est le plus gros du monde?,,,,,
+63,science,Quel animal est Bambi?,,,,,
+64,science,Quel animal ne boit pas d eau?,,,,,
+65,science,Quel animal insolite a ete retrouve a Rennes le 1er juillet 2016?,,,,,
+66,science,Quel animal dort le plus?,,,,,
+67,science,Quel animal a pour nom scientifique Passer domesticus?,,,,,
+68,science,Quel est le nom scientifique de la truite?,,,,,
+69,science,Quel animal a pour nom scientifique Scorpio maurus?,,,,,
+70,science,Quel est le nom scientifique des loup gris?,,,,,
+71,science,Un taureau peut-il porter un bebe dans son ventre ?,,,,,
+72,science,Quel animal est ovipare?,,,,,
+73,science,Quel animal est vivipare?,,,,,
+74,science,Qu est-ce qu un animal vivipare?,,,,,
+75,science,Les œufs sont-ils toujours entoures d une coquille?,,,,,
+76,science,A quel ordre d animaux appartient l ornithorynque?,,,,,
+77,science,Quel est l animal qui retint l attention du naturaliste et paleontologue Charles Darwin lors de son voyage dans l archipel des Galapagos et dont l observation des particularismes insulaires a participe de sa theorie de l evolution sur l origine des especes?,,,,,
+78,science,De quelle espece de primate l etre humain actuel est-il le plus proche genetiquement ?,,,,,
+79,science,De quels animaux les lamantins et les dugongs sont-ils les plus proches dans la liste ci-dessous ?,,,,,
+80,science,Combien existe-t-il d especes de lions vivant actuellement ?,,,,,
+81,science,Un de ces animaux n est pas un primate : lequel ?,,,,,
+82,science,"Parmi les 4 especes ci-dessous, il y a un intrus qui ne fait pas partie des Ophidiens : lequel ?",,,,,
+83,science,Lequel de ces animaux n est pas un rongeur?,,,,,
+84,science,Combien existe-t-il officiellement d especes d elephants?,,,,,
+85,science,"Parmi ces 4 oiseaux, lequel n appartient pas a l ordre des Psittaciformes ?",,,,,
+86,science,Quel continent est constitue de glace et entoure d eau?,,,,,
+87,science,Ou vit le petit pingouin ?,,,,,
+88,science,"Parmi les 4 caracteristiques de l ornithorynque ci-dessous, il en est une qui est fausse : laquelle ?",,,,,
+89,science,"Parmi les 4 especes d oiseaux ci-dessous, il en est une qui n est pas presente en Australie : laquelle ?",,,,,
+90,science,Comment les Australiens surnomment-ils les petits des marsupiaux ?,,,,,
+91,maths,Quel est le carre de 25,,,,,
+92,maths,D apres le theoreme de pythagore:,,,,,
+93,maths,La trigonometrie s applique seulement aux:,,,,,
+94,maths,Pi a pour valeur approximative:,,,,,
+95,maths,La formule de la surface d un rectangle est:,,,,,
+96,maths,Qu est-ce qu un ellipsoïde?,,,,,
+97,maths,1 hectometre vaut:,,,,,
+98,maths,Quelle est la racine carree de 542?,,,,,
+99,maths,Comment se nomme la puissance 4?,,,,,
+100,maths,Quelle est la formule qui permet de calculer l aire d une sphere ?,,,,,
+101,maths,Qu est-ce qu un triangle isocele ?,,,,,
+102,maths,"Parmi ces figures, laquelle n est pas un polygone ?",,,,,
+103,maths,La somme des angles d un triangle est egale a ?,,,,,
+104,maths,Soustrayez 831 et 479:,,,,,
+105,maths,Multipliez 16 et 21:,,,,,
+106,maths,Quel est le carre de 17?,,,,,
+107,maths,Quel est l approximation de l inverse de 7?,,,,,
+108,maths,Comment signifie generalement ce symbole ??,,,,,
+109,maths,Laquelle de ces affirmations n est pas un axiome d euclide ?,,,,,
+110,maths,Qui est le premier mathematicien a avoir cree une geometrie non euclidienne ?,,,,,
+111,maths,Comment se nomme le theoreme enonce par Godel ?,,,,,
+112,maths,Comment se nomme un polygone possedant 7 faces ?,,,,,
+113,maths,Lequel de ces problemes du millenaire a ete resolue ?,,,,,
+114,maths,Combien de problemes du millenaire ne sont pas resolues ?,,,,,
+115,maths,Qui est le premier mathematicien connu de l histoire ?,,,,,
+116,maths,Que vaut l oppose de l inverse du carre de 2?,,,,,
+117,maths,Multipliez 24 et 62,,,,,
+118,maths,Le theoreme de talent concerne uniquement:,,,,,
+119,maths,"Si le discriminant d une equation du second degre est negatif, alors:",,,,,
+120,maths,Diviser revient a:,,,,,

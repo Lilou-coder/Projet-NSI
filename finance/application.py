@@ -12,7 +12,7 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, insertQuestions, create_email
+from helpers import apology, login_required, create_email
 
 # Configure application
 app = Flask(__name__)
@@ -42,22 +42,6 @@ db = SQL("sqlite:///kraken.db")
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
-
-# Insert questions into database
-
-#recordsToInsert = [("Geographie", "Quel pays a pour capitale Gaborone ?")
-                   #("Geographie", "Quelle est la capitale de la Suisse ?")
-                   #("Geographie", "Quelle ville compte la plus haute densité de population du monde?")
-                   #("Geographie", "Quel pays est le moins densément peuplé au monde?")
-                   #("Geographie", "De quel pays Beyrouth est-elle la capitale?")
-                   #("Geographie", "De quel pays Londres est-elle la capitale?")
-                   #("Histoire", "Lequel de ces pharaons a régné en premier?")
-                   #("Histoire", "Qui est ennemi de la France pendant la guerre de Cent ans?")
-                   #("SVT", "Quel animal est le plus gros du monde?")]
-
-questions = db.execute("SELECT * FROM questions")
-#if questions == []:
-    #insertQuestions(recordsToInsert)
 
 @app.route("/")
 @login_required
@@ -93,22 +77,27 @@ def joining_game():
 @app.route("/games/<gamecode>/admin", methods=["GET", "POST"])
 @login_required
 def admingame(gamecode):
+
+    # Find game_id
+    game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
+
     if request.method == "POST":
 
-        # Update database for actif_question 1
+        # Update database for actif_question 0 - first question
         rows = db.execute("UPDATE actif_games SET actif_question = 0")
+
+        # Update users 'progress' to the first question
+        players = db.execute("UPDATE actif_players SET progress = 0 WHERE game_id = ?", game_id[0]["game_id"])
 
         # Redirect user to game page
         return redirect("/games/" + gamecode)
     else:
-        # Find game_id
-        game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
-
+        
         # Check if game code is valid
         if game_id == []:
             # TODO: improve experience 
             return apology("Incorrect game code", 403)
-
+        
         game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
         player_id = db.execute("SELECT user_id FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
         players = []
@@ -117,9 +106,10 @@ def admingame(gamecode):
 
         return render_template("admin.html", players=players)
 
-@app.route("/games/<gamecode>")
+@app.route("/games/<gamecode>", methods=["GET", "POST"])
 @login_required
 def joingame(gamecode):
+
     # Find game_id
     game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
 
@@ -128,31 +118,62 @@ def joingame(gamecode):
         # TODO: improve experience 
         return apology("Incorrect game code", 403)
 
-    # Insert into database new player
-    player_exists = db.execute("SELECT user_id FROM actif_games WHERE game_code=?", gamecode)
-    players_found = False
-    for user in player_exists:
-        if session["user_id"] != int(user["user_id"]):
-            players_found=True
-            rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
-            break
-
-    # TODO: fix the bug, players don't appear 
-
-    # Find status of game
-    progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
+    # Find player progress
+    player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
     #if not progress:
         #pass
         #TODO : handle that case 
-    
-    # Find questions for games
-    subject = db.execute("SELECT subject FROM actif_games WHERE game_code = ?", gamecode)
-    questions = db.execute("SELECT question FROM questions WHERE subject = ?", subject[0]["subject"])
-    id = db.execute("SELECT id FROM questions WHERE subject = ?", subject[0]["subject"])
-    answers = db.execute("SELECT answer FROM answers WHERE question_id = ?", id[0]["id"])
-    
-    return render_template("game.html", questions=questions, answers = answers)
 
+    # Find status of game
+    game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
+    #if not progress:
+        #pass
+        #TODO : handle that case 
+
+    if game_progress[0]["actif_question"] != -1:
+
+        # Find the current question for games
+        question_id = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ? and question_number = ?", game_id[0]["game_id"], player_progress[0]["progress"])
+        # TODO: when finished, lead to other page
+        if question_id == []:
+            return apology("There was a problem retreiving the question, please try again", 404)
+        question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", question_id[0]["question_id"])
+    else:
+        # TODO: bug - the creator of the game is not inserted into the database because game_progress = 0
+        # Insert into database new player
+        player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
+        if player_exists == []:
+            rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
+
+        for user in player_exists:
+            if session["user_id"] != int(user["user_id"]):
+                rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
+                break
+            else:
+                break
+        return  render_template("game.html", progress = game_progress[0]["actif_question"])
+
+    if request.method == "POST":
+
+        # Update current question
+        rows = db.execute("UPDATE actif_games SET actif_question = ?", int(player_progress[0]["progress"])+1)
+        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ?", int(player_progress[0]["progress"])+1, session["user_id"])
+
+        # Check if answer is correct
+        if request.form["answer"] == question[0]["correct_answer"]:
+            score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
+            rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ?", int(score[0]["score"]+1), session["user_id"])
+
+    # TODO: bug - les questions avancent toutes seules puisque la page se 'refreche' toutes seule
+    # TODO: prepare for the end, when does it stop
+
+    return render_template("game.html", progress = game_progress[0]["actif_question"], 
+                                        question = question[0]["question"], 
+                                        answer1=question[0]["answer1"], 
+                                        answer2=question[0]["answer2"], 
+                                        answer3=question[0]["answer3"], 
+                                        answer4=question[0]["answer4"],
+                                        gamecode = gamecode)
 
 
 @app.route("/creategame", methods=["GET", "POST"])
@@ -171,6 +192,15 @@ def creategame():
         # Store information
         rows = db.execute("INSERT INTO actif_games (user_id, game_code, date, master, actif_question, question_time_stamp, time_for_each_question, subject, number_of_questions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", session["user_id"], game_code, datetime.now(), True, "-1", datetime.now(), time, subject, number_of_questions)
         
+        # Fill in question_for_games table to have the questions for the new game
+
+        game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", game_code)
+
+        for i in range (int(number_of_questions)):
+            question_id = db.execute("SELECT id FROM questions WHERE subject = ? ORDER BY RANDOM() LIMIT ?", subject, number_of_questions)
+            rows = db.execute("INSERT INTO question_for_game (game_id, question_number, question_id) VALUES (?, ?, ?)", game_id[0]["game_id"], i, question_id[i]["id"])
+
+
         return redirect("/games/" + game_code + "/admin")
 
     else:

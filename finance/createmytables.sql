@@ -1,4 +1,8 @@
 #cat createmytables.sql | sqlite3 kraken.db
+# Pour connecter le fichier csv, il faut d'abord, après avoir créer la base de donnée, écrire '.mode csv'
+# Suivi de '.import Questions.csv questions'
+# Même si c'est écrit qu'il y a une erreur, ça marche quand même. Nous la corrigerons bientôt. 
+
 
 CREATE TABLE IF NOT EXISTS "users"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
@@ -20,6 +24,13 @@ CREATE TABLE IF NOT EXISTS "actif_games"(
     "subject" TEXT NOT NULL,
     "number_of_questions" NOT NULL);
 
+CREATE TABLE IF NOT EXISTS "question_for_game"(
+    "game_id" INTEGER NOT NULL,
+    "question_number" INTEGER NOT NULL,
+    "question_id" INTEGER NOT NULL,
+    FOREIGN KEY ("game_id") REFERENCES "actif_games" ("game_id"),
+    FOREIGN KEY ("question_id") REFERENCES "questions" ("id"));
+
 CREATE TABLE IF NOT EXISTS "actif_players"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
     "user_id" TEXT NOT NULL,
@@ -32,11 +43,11 @@ CREATE TABLE IF NOT EXISTS "actif_players"(
 CREATE TABLE IF NOT EXISTS "questions"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     "subject" TEXT NOT NULL,
-    "question" TEXT NOT NULL);
+    "question" TEXT NOT NULL, 
+    "answer1",
+    "answer2",
+    "answer3",
+    "answer4",
+    "correct_answer");
 
-CREATE TABLE IF NOT EXISTS "answers"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-    "question_id" INTEGER NOT NULL, 
-    "answer" TEXT NOT NULL, 
-    "correct" BOOLEAN NOT NULL, 
-    FOREIGN KEY ("question_id") REFERENCES "questions"("id"));
+

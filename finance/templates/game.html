@@ -26,33 +26,19 @@
     {% if progress == -1 %}
     <h1>Please Wait</h1>
     {% else %}
-    <table class="table tablestriped">
-        <thead>
-            <tr>
-                <th class="text-start">Question</th>
-            </tr>
-        </thead>
-        {% for question in questions %}
-        <tr>
-            <td class="text-start">{{ question["question"] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    <table class="table tablestriped">
-        <thead>
-            <tr>
-                <th class="text-start">Answers</th>
-            </tr>
-        </thead>
-        {% for answer in answers %}
-        
-        <tr>
-            <form>
-                <td class="button">{{ answer["answer"] }}</td>
-            </form>
-        </tr>
-        {% endfor %}
-    </table>
+        <table class="table tablestriped">
+            <thead>
+                <tr>
+                    <th class="text-start">{{ question }}</th>
+                </tr>
+            </thead>
+        </table>
+        <form method = "post">
+            <button class="button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
+            <button class="button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
+            <button class="button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
+            <button class="button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+        </form>
     {% endif %}
 
 {% endblock %}
