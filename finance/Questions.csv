@@ -75,7 +75,7 @@
 75,SVT,Les œufs sont ils toujours entoures d une coquille?,"Non, certaines especes animales ont des œufs mous",Oui sauf pour les serpents,"Non, la poule est la seule espece a avoir des œufs avec une coquille","Oui, les œufs sont toujours entoures d une coquille pour les proteger",1
 76,SVT,A quel ordre d animaux appartient l ornithorynque?,Rongeurs,Monotremes,Diprotodontes,Anseriformes,2
 77,SVT,Quel est l animal qui retint l attention du naturaliste et paleontologue Charles Darwin lors de son voyage dans l archipel des Galapagos et dont l observation des particularismes insulaires a participe de sa theorie de l evolution sur l origine des especes?,Ver de Terre,Tortue Geante,Iguane,Pinson,4
-78,SVT,De quelle espece de primate l être humain actuel est il le plus proche genetiquement ?,Gorille,Bonobo,Orang-Outan,Chimpanze,4
+78,SVT,De quelle espece de primate l etre humain actuel est il le plus proche genetiquement ?,Gorille,Bonobo,Orang-Outan,Chimpanze,4
 79,SVT,De quels animaux les lamantins et les dugongs sont ils les plus proches dans la liste ci dessous ?,Phoques,Dauphins,Elephants,Hippopotames,3
 80,SVT,Combien existe t il d especes de lions vivant actuellement ?,Deux,Vingt,Huit,Une seule,4
 81,SVT,Un de ces animaux n est pas un primate : lequel ?,Couscous,Aye-Aye,Galago,Loris,1
@@ -98,7 +98,7 @@
 98,Maths,Quelle est la racine carree de 542?,23.28,23.07,19.65,35.18,1
 99,Maths,Comment se nomme la puissance 4?,puissance quatrieme,puissance quatuor,puissance delta,puissance quadratique,1
 100,Maths,Quelle est la formule qui permet de calculer l aire d une sphere ?,4 x pi x r x r,pi x r x 4,r x pi x volume,Pi x Pi x 4 x r x r,1
-101,Maths,Qu est  ce qu un triangle isocele ?,Un triangle qui a deux cotes de même longueur,Un triangle qui a trois cotes de même longueur,Un triangle qui a un angle droit,Un triangle qui a 2 angles droits,1
+101,Maths,Qu est  ce qu un triangle isocele ?,Un triangle qui a deux cotes de meme longueur,Un triangle qui a trois cotes de meme longueur,Un triangle qui a un angle droit,Un triangle qui a 2 angles droits,1
 102,Maths,"Parmi ces figures, laquelle n est pas un polygone ?",trapeze,cercle,carre,triangle,2
 103,Maths,La somme des angles d un triangle est egale a ?,180 degres,270 degres,360 degres,90 degres,1
 104,Maths,Soustrayez 831 et 479:,362,372,382,352,4
@@ -106,7 +106,7 @@
 106,Maths,Quel est le carre de 17?,372,323,306,289,4
 107,Maths,Quel est l approximation de l inverse de 7?,0.9842,0.1483,0.1429,0.1754,3
 108,Maths,Que signifie le symbole Delta majuscule?,Une difference,Le cube d un nombre,Le theoreme de Pythagore,Le reste d une division euclidienne,1
-109,Maths,Laquelle de ces affirmations n est pas un axiome d euclide ?,Tous les angles droits sont egaux entre eux.,Tout point est defini sur une surface plane,"Avec tout point comme centre et tout rayon, on peut tracer une circonference.",Toute droite finie peut être prolongee infiniment et continument.,2
+109,Maths,Laquelle de ces affirmations n est pas un axiome d euclide ?,Tous les angles droits sont egaux entre eux.,Tout point est defini sur une surface plane,"Avec tout point comme centre et tout rayon, on peut tracer une circonference.",Toute droite finie peut etre prolongee infiniment et continument.,2
 110,Maths,Qui est le premier mathematicien a avoir cree une geometrie non euclidienne ?,Carl Friedrich Gauss,Henri Pointcarre,Phytagore,Euclide,1
 111,Maths,Comment se nomme le theoreme enonce par Gödel ?,le theoreme extra-geometrique,Le theoreme d incompletude,Le theoreme intergeometrique,Le theoreme d incertitude,2
 112,Maths,Comment se nomme un polygone possedant 7 faces ?,Septagone,Epsigone,Heptagone,Tetragone,3
