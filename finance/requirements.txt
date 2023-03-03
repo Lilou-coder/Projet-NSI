@@ -2,3 +2,6 @@ cs50
 Flask
 Flask-Session
 requests
+Flask==2.1.1
+Flask-SocketIO==5.1.1
+simple-websocket==0.5.1

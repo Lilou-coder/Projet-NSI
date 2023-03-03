@@ -11,6 +11,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
+#from flask.ext.socketio import SocketIO, emit
 
 from helpers import apology, login_required, create_email
 
@@ -42,6 +43,11 @@ db = SQL("sqlite:///kraken.db")
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
+
+#@socketio.on('my event')                          # Decorator to catch an event called "my event":
+#def test_message(message):                        # test_message() is the event callback function.
+    emit('my response', {'data': 'got it!'})      # Trigger a new event called "my response" 
+                                                  # that can be caught by another callback later in the program.
 
 @app.route("/")
 @login_required

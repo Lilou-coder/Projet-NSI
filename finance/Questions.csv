@@ -47,7 +47,7 @@
 47,Histoire,Comment s appelait l heritier du trone d Autriche durant la premiere guerre mondiale ?,Francois-Alexandre,Francois Karl,Francois-Ferdinand,Francois-Maximilien,3
 48,Histoire,Quand l armistice de la 1er guerre mondiale a t il ete signe?,21-Nov-18,08-Nov-18,15-Nov-18,11-Nov-18,4
 49,Histoire,Quand La Russie signe t elle un traite de paix separe avec l Allemagne ?,1918,1917,1914,1920,2
-50,Histoire,Quelle guerre a dure de 1756 a 1763 ?,La guerre de Trente Ans,La guerre d’independance,La guerre de Succession d Autriche,La guerre de Sept Ans,2
+50,Histoire,Quelle guerre a dure de 1756 a 1763 ?,La guerre de Trente Ans,La guerre d independance,La guerre de Succession d Autriche,La guerre de Sept Ans,2
 51,Histoire,Que se passe t il le 16 decembre 1773 ?,Le Sugar Act,La Boston Tea Party,La Declaration d independance,Le traite de Paris,2
 52,Histoire,Quelle est la capitale politique et intellectuelle de la Nouvelle Angleterre ?,New York,Baltimore,Boston,Philadelphie,3
 53,Histoire,Quelles sont les consequences du traite de Paris ?,L Angleterre gagne la Californie,La France perd la Louisiane,La France recupere le Canada,L Espagne perd les 13 colonies,2
@@ -71,8 +71,8 @@
 71,SVT,Un taureau peut il porter un bebe dans son ventre ?,Non car c est un ovipare,Oui car la femelle ne peut pas,Non car c est un male,Oui car c est un vivipare,3
 72,SVT,Quel animal est ovipare?,Le criquet,La chevre,Le panda,La vache,1
 73,SVT,Quel animal est vivipare?,Le crocodile,Le criquet,Le moineau,L elephant,4
-74,SVT,Qu est ce qu un animal vivipare?,C est un animal dont les oeufs sont a l interieur de la femelle,C est un animal qui pond des œufs pour se reproduire,C est un animal dont l embryon se developpe a l interieur de la mere,C est un animal qui pond des embryons,3
-75,SVT,Les œufs sont ils toujours entoures d une coquille?,"Non, certaines especes animales ont des œufs mous",Oui sauf pour les serpents,"Non, la poule est la seule espece a avoir des œufs avec une coquille","Oui, les œufs sont toujours entoures d une coquille pour les proteger",1
+74,SVT,Qu est ce qu un animal vivipare?,C est un animal dont les oeufs sont a l interieur de la femelle,C est un animal qui pond des oeufs pour se reproduire,C est un animal dont l embryon se developpe a l interieur de la mere,C est un animal qui pond des embryons,3
+75,SVT,Les oeufs sont ils toujours entoures d une coquille?,"Non, certaines especes animales ont des oeufs mous",Oui sauf pour les serpents,"Non, la poule est la seule espece a avoir des oeufs avec une coquille","Oui, les oeufs sont toujours entoures d une coquille pour les proteger",1
 76,SVT,A quel ordre d animaux appartient l ornithorynque?,Rongeurs,Monotremes,Diprotodontes,Anseriformes,2
 77,SVT,Quel est l animal qui retint l attention du naturaliste et paleontologue Charles Darwin lors de son voyage dans l archipel des Galapagos et dont l observation des particularismes insulaires a participe de sa theorie de l evolution sur l origine des especes?,Ver de Terre,Tortue Geante,Iguane,Pinson,4
 78,SVT,De quelle espece de primate l etre humain actuel est il le plus proche genetiquement ?,Gorille,Bonobo,Orang-Outan,Chimpanze,4
@@ -108,7 +108,7 @@
 108,Maths,Que signifie le symbole Delta majuscule?,Une difference,Le cube d un nombre,Le theoreme de Pythagore,Le reste d une division euclidienne,1
 109,Maths,Laquelle de ces affirmations n est pas un axiome d euclide ?,Tous les angles droits sont egaux entre eux.,Tout point est defini sur une surface plane,"Avec tout point comme centre et tout rayon, on peut tracer une circonference.",Toute droite finie peut etre prolongee infiniment et continument.,2
 110,Maths,Qui est le premier mathematicien a avoir cree une geometrie non euclidienne ?,Carl Friedrich Gauss,Henri Pointcarre,Phytagore,Euclide,1
-111,Maths,Comment se nomme le theoreme enonce par Gödel ?,le theoreme extra-geometrique,Le theoreme d incompletude,Le theoreme intergeometrique,Le theoreme d incertitude,2
+111,Maths,Comment se nomme le theoreme enonce par Godel ?,le theoreme extra-geometrique,Le theoreme d incompletude,Le theoreme intergeometrique,Le theoreme d incertitude,2
 112,Maths,Comment se nomme un polygone possedant 7 faces ?,Septagone,Epsigone,Heptagone,Tetragone,3
 113,Maths,Lequel de ces problemes du millenaire a ete resolue ?,equations de Yang-Mills,Conjecture de Hodge,Conjecture de Birch et Swinnerton-Dyer,Conjecture de Poincare,4
 114,Maths,Combien de problemes du millenaire ne sont pas resolues ?,11,8,7,3,3
