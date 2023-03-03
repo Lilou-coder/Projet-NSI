@@ -51,7 +51,6 @@ def index():
 @app.route("/jouer")
 @login_required
 def jouer():
-
     return render_template("jouer.html",)
 
 @app.route("/joingame", methods=["GET", "POST"])
@@ -91,7 +90,19 @@ def admingame(gamecode):
 
         # Redirect user to game page
         return redirect("/games/" + gamecode)
+
     else:
+        # Insert user into database - same line of code as before
+        player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
+        if player_exists == []:
+            rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
+
+        for user in player_exists:
+            if session["user_id"] != int(user["user_id"]):
+                rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
+                break
+            else:
+                break
         
         # Check if game code is valid
         if game_id == []:
@@ -120,26 +131,35 @@ def joingame(gamecode):
 
     # Find player progress
     player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
-    #if not progress:
-        #pass
-        #TODO : handle that case 
+    # If not progress:
+    if player_progress == []:
+        return apology ("Something went wrong, please try again", 403)
 
     # Find status of game
     game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
-    #if not progress:
-        #pass
-        #TODO : handle that case 
+    # If not progress:
+    if game_progress == []:
+        return apology ("Something went wrong, please try again", 403)
 
     if game_progress[0]["actif_question"] != -1:
 
         # Find the current question for games
         question_id = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ? and question_number = ?", game_id[0]["game_id"], player_progress[0]["progress"])
-        # TODO: when finished, lead to other page
+
+        # When finished, lead to another page with the results
         if question_id == []:
-            return apology("There was a problem retreiving the question, please try again", 404)
+            # Find player score
+            score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
+            player = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+
+            # Erase line from table
+            rows = db.execute("DELETE FROM actif_players WHERE user_id = ?", session["user_id"])
+
+            return render_template("results.html", player=player[0]["username"], score = score[0]["score"])
+        
         question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", question_id[0]["question_id"])
+
     else:
-        # TODO: bug - the creator of the game is not inserted into the database because game_progress = 0
         # Insert into database new player
         player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
         if player_exists == []:
@@ -165,7 +185,8 @@ def joingame(gamecode):
             rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ?", int(score[0]["score"]+1), session["user_id"])
 
     # TODO: bug - les questions avancent toutes seules puisque la page se 'refreche' toutes seule
-    # TODO: prepare for the end, when does it stop
+
+
 
     return render_template("game.html", progress = game_progress[0]["actif_question"], 
                                         question = question[0]["question"], 

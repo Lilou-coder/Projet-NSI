@@ -5,15 +5,18 @@
 {% endblock %}
 
 {% block javascript %}
-    <script>
-        <!--
-        function timedRefresh(timeoutPeriod) {
-            setTimeout("location.reload(true);",timeoutPeriod);
-        }
-        
-        window.onload = timedRefresh(10000);
-        
-        //   -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+            $('a#test').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/background_process_test',
+                    function(data) {
+                //do nothing
+                });
+                return false;
+            });
+            });
     </script>
 {% endblock %}
 
@@ -34,10 +37,10 @@
             </thead>
         </table>
         <form method = "post">
-            <button class="button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
-            <button class="button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
-            <button class="button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
-            <button class="button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+            <button href=# id=test class="button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
+            <button href=# id=test class="button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
+            <button href=# id=test class="button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
+            <button href=# id=test class="button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
         </form>
     {% endif %}
 
