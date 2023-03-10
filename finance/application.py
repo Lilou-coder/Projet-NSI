@@ -46,7 +46,7 @@ if not os.environ.get("API_KEY"):
 
 #@socketio.on('my event')                          # Decorator to catch an event called "my event":
 #def test_message(message):                        # test_message() is the event callback function.
-    emit('my response', {'data': 'got it!'})      # Trigger a new event called "my response" 
+    #emit('my response', {'data': 'got it!'})      # Trigger a new event called "my response" 
                                                   # that can be caught by another callback later in the program.
 
 @app.route("/")
@@ -103,6 +103,7 @@ def admingame(gamecode):
         if player_exists == []:
             rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
 
+        # TO DO: regarder la logique
         for user in player_exists:
             if session["user_id"] != int(user["user_id"]):
                 rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")

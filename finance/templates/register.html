@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/register" method="post">
+    <form action="/register" method="post" style="width: 300px" class="centrer-horizontalement">
         <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         </div>
         <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password" type="password">
+            <input class="form-control" name="password" placeholder="Password" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         </div>
         <div class="form-group">
-            <input class="form-control" name="confirmation" placeholder="Confirm password" type="password">
+            <input class="form-control" name="confirmation" placeholder="Confirm password" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         </div>
         <button class="btn btn-primary" type="submit">Register</button>
     </form>

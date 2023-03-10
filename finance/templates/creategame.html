@@ -6,19 +6,21 @@
 
 {% block main %}
 
-<form class="blankspace" action="/creategame" method="post">
+<form class="blankspace" action="/creategame" method="post" style="width: 300px" class="centrer-horizontalement" >
 
     <label for="cars">Choose a subject:</label>
 
-    <select name="subject" >
+    <select name="subject" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         <option value="Histoire">Histoire</option>
         <option value="SVT">SVT</option>
         <option value="Maths">Maths</option>
         <option value="Geographie">Geographie</option>
     </select>
 
-    <input autocomplete="off" autofocus class="form-control" name="number_of_questions" placeholder="Number of questions" min="1" max="15" type="number">
-    <input autocomplete="off" autofocus class="form-control" name="time" placeholder="Time for each question" min="3" max="20" type="number">
+    <input autocomplete="off" autofocus class="form-control" name="number_of_questions" placeholder="Number of questions" min="1" max="15" type="number"
+    style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
+    <input autocomplete="off" autofocus class="form-control" name="time" placeholder="Time for each question" min="3" max="20" type="number"
+    style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
 
     <button class="btn btn-primary" type="submit">Submit</button>
     
