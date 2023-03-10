@@ -147,6 +147,16 @@ def joingame(gamecode):
     if game_progress == []:
         return apology ("Something went wrong, please try again", 403)
 
+    # Find player score
+    score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
+    if score == []:
+        return apology ("Something went wrong, please try again", 403)
+
+    # Find time for the question
+    time = db.execute("SELECT time_for_each_question FROM actif_games WHERE game_code = ?", gamecode)
+    if time == []:
+        return apology ("Something went wrong, please try again", 403)
+
     if game_progress[0]["actif_question"] != -1:
 
         # Find the current question for games
@@ -154,8 +164,7 @@ def joingame(gamecode):
 
         # When finished, lead to another page with the results
         if question_id == []:
-            # Find player score
-            score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
+            
             player = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
 
             # Erase line from table
@@ -200,7 +209,8 @@ def joingame(gamecode):
                                         answer2=question[0]["answer2"], 
                                         answer3=question[0]["answer3"], 
                                         answer4=question[0]["answer4"],
-                                        gamecode = gamecode)
+                                        gamecode = gamecode,
+                                        score = score[0]["score"])
 
 
 @app.route("/creategame", methods=["GET", "POST"])
