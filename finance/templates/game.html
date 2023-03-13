@@ -22,27 +22,42 @@
 
 {% block main %}
 
-    <audio controls autoplay loop>
+    <audio controls autoplay loop id="myAudio">
         <source src="https://vgmsite.com/soundtracks/mario-paint-game-rip/beevmkcpjb/01%20Mario%20Paint.mp3" type="audio/mp3">
     </audio>
+
+    <style>
+        #myAudio {
+          display: none;
+        }
+      </style>
 
     {% if progress == -1 %}
     <h1>Please Wait</h1>
     {% else %}
-        <header>Your score is {{score}} </header>
-        <table class="table tablestriped">
+        <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;">
+            Your score is: {{score}} </header>
+        <table style="color:white; font-size: 30px ; margin: auto; margin-top:20px; margin-bottom: 80px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
             <thead>
                 <tr>
                     <th class="text-start">{{ question }}</th>
                 </tr>
             </thead>
         </table>
+
+<!-- Button of game -->       
+        
         <form method = "post">
-            <button href=# id=test class="button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
-            <button href=# id=test class="button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
-            <button href=# id=test class="button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
-            <button href=# id=test class="button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+            <button href=# id=test class="game-button-up-right" type="submit" name="answer" value = 1> {{ answer1 }} </button>
+            <button href=# id=test class="game-button-up-left" type="submit" name="answer" value = 2> {{ answer2 }} </button>
         </form>
+        <form>
+            <button href=# id=test class="game-button-down-left" type="submit" name="answer" value = 3> {{ answer3 }} </button>
+            <button href=# id=test class="game-button-down-right" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+        </form>
+
+ 
+       
     {% endif %}
 
 {% endblock %}

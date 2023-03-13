@@ -14,6 +14,73 @@ nav .navbar-brand .red
     color: #84699a;
 }
 
+/* Buttons position for games*/
+
+.game-button-up-right { 
+    width: 40%;
+    height: 175px;
+    background-color: #5D3FD3; /* Blue */
+    border-radius: 10px ;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    margin-top: auto;
+    display: inline-block;
+    font-size: 20px ;
+
+}
+
+.game-button-up-left { 
+    width: 40%;
+    height: 175px;
+    background-color: #5D3FD3; /* Blue */
+    border-radius: 10px ;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    margin-top: auto;
+    display: inline-block;
+    font-size: 20px;
+
+
+}
+
+.game-button-down-right {
+    width: 40%;
+    height: 175px; 
+    background-color: #5D3FD3; /* Blue */
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+    font-size:20px;
+
+}
+
+.game-button-down-left { 
+    width: 40%;
+    height: 175px;
+    background-color: #5D3FD3; /* Blue */
+    border-radius: 10px ;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 20px;
+
+}
+
+/* End of button position*/ 
+
+
+  
 .text
 {
     color:#4f4337;
@@ -43,12 +110,6 @@ main img
     max-width: 100%;
 }
 
-header
-{
-    font :"color:aliceblue"; 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-size: 30px"
-}
 
 .fixedButton{
     position: fixed;
@@ -71,7 +132,7 @@ header
 
 .button {
     background-color: #5D3FD3; /* Blue */
-    border-radius: 10% ;
+    border-radius: 10px ;
     color: rgb(255, 255, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 15px 32px;

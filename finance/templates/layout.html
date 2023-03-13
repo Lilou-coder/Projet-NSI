@@ -30,10 +30,10 @@
     <body style="background: rgb(58, 56, 139)" ></body>
         <nav class="navbar navbar-expand-md navbar-light bg-light border" >
             
-            <a href="http://127.0.0.1:5000">
-                <img src="https://cdn.freebiesupply.com/logos/large/2x/kraken-logo-png-transparent.png"
-                width= 10% height=0% >
-            </a>
+            
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/kraken-logo-png-transparent.png"
+            width= 10% height=0% >
+            
             
             
             <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button" > 
@@ -41,13 +41,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 {% if session.user_id %}
-                    <ul class="navbar-nav mr-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/jouer">Jouer</a></li>
-
-                        <li class="nav-item"><a class="nav-link" href="/contacteznous">Contactez-nous</a></li>
-                    </ul>
                     <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/jouer">Jouer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contacteznous">Contactez-nous</a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5000">Homepage</a></li>
                     </ul>
                 {% else %}
                     <ul class="navbar-nav ml-auto mt-2">
