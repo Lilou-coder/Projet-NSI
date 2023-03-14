@@ -83,7 +83,9 @@ def joining_game():
 @login_required
 def admingame(gamecode):
 
-    # Find game_id
+    # Find game_id via sqlite3 by 'selecting' from the database kraken the 'game_id'...
+    # ... from the table 'actif_games' where gamecode equals the one in the url (variable 'gamecode')
+    # The '?' fills in for a variable outside of the request which will be inserted into the line when it runs.
     game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
 
     if request.method == "POST":
@@ -140,23 +142,23 @@ def joingame(gamecode):
     player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
     # If not progress:
     if player_progress == []:
-        return apology ("Something went wrong, please try again", 403)
+        return apology ("Something went wrong when retrieving player progress, please try again", 403)
 
     # Find status of game
     game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
     # If not progress:
     if game_progress == []:
-        return apology ("Something went wrong, please try again", 403)
+        return apology ("Something went wrong when retrieving game progress, please try again", 403)
 
     # Find player score
     score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
     if score == []:
-        return apology ("Something went wrong, please try again", 403)
+        return apology ("Something went wrong when retrieving player score, please try again", 403)
 
     # Find time for the question
     time = db.execute("SELECT time_for_each_question FROM actif_games WHERE game_code = ?", gamecode)
     if time == []:
-        return apology ("Something went wrong, please try again", 403)
+        return apology ("Something went wrong when retrieving the maximum time per question, please try again", 403)
 
     if game_progress[0]["actif_question"] != -1:
 
@@ -167,17 +169,26 @@ def joingame(gamecode):
         if question_id == []:
             
             player = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+            # If not player:
+            if player == []:
+                return apology ("Something went wrong when inserting player into database, please try again", 403)
 
-            # Erase line from table
+            # Erase player from database
             rows = db.execute("DELETE FROM actif_players WHERE user_id = ?", session["user_id"])
 
             return render_template("results.html", player=player[0]["username"], score = score[0]["score"])
         
+        # Select question
         question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", question_id[0]["question_id"])
+
+        # If not question, send error message
+        if question == []:
+            return apology ("Something went wrong when retrieving the question, please try again", 403)
 
     else:
         # Insert into database new player
         player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
+        
         if player_exists == []:
             rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
 
@@ -185,8 +196,7 @@ def joingame(gamecode):
             if session["user_id"] != int(user["user_id"]):
                 rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
                 break
-            else:
-                break
+
         return  render_template("game.html", progress = game_progress[0]["actif_question"])
 
     if request.method == "POST":
