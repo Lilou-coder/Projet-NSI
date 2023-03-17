@@ -5,18 +5,15 @@
 {% endblock %}
 
 {% block javascript %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type=text/javascript>
-            $(function() {
-            $('a#test').on('click', function(e) {
-                e.preventDefault()
-                $.getJSON('/background_process_test',
-                    function(data) {
-                //do nothing
-                });
-                return false;
-            });
-            });
+    <script>
+        <!--
+        function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);",timeoutPeriod);
+        }
+        
+        window.onload = timedRefresh({{time}}*1000);
+        
+        //   -->
     </script>
 {% endblock %}
 

@@ -223,7 +223,8 @@ def joingame(gamecode):
                                         answer3=question[0]["answer3"], 
                                         answer4=question[0]["answer4"],
                                         gamecode = gamecode,
-                                        score = score)
+                                        score = score,
+                                        time = time[0]["time_for_each_question"])
 
 
 @app.route("/creategame", methods=["GET", "POST"])
