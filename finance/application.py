@@ -124,7 +124,7 @@ def admingame(gamecode):
         for i in range(len(player_id)):
             players += db.execute("SELECT username FROM users WHERE id = ?", player_id[0]["user_id"])
 
-        return render_template("admin.html", players=players)
+        return render_template("admin.html", players=players, gamecode=gamecode)
 
 @app.route("/games/<gamecode>", methods=["GET", "POST"])
 @login_required
@@ -151,7 +151,7 @@ def joingame(gamecode):
         return apology ("Something went wrong when retrieving game progress, please try again", 403)
 
     # Find player score
-    score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
+    score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id = ?", session["user_id"], game_id[0]["game_id"])[0]["score"]
     if score == []:
         return apology ("Something went wrong when retrieving player score, please try again", 403)
 
@@ -202,26 +202,28 @@ def joingame(gamecode):
     if request.method == "POST":
 
         # Update current question
-        rows = db.execute("UPDATE actif_games SET actif_question = ?", int(player_progress[0]["progress"])+1)
-        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ?", int(player_progress[0]["progress"])+1, session["user_id"])
+        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(player_progress[0]["progress"])+1, gamecode)
+        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
+
+        score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id=?", session["user_id"], game_id[0]["game_id"])
 
         # Check if answer is correct
         if request.form["answer"] == question[0]["correct_answer"]:
-            score = db.execute("SELECT score FROM actif_players WHERE user_id = ?", session["user_id"])
-            rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ?", int(score[0]["score"]+1), session["user_id"])
+            score = int(score[0]["score"]) + 1
+            rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ? and game_id = ?", score, session["user_id"], game_id[0]["game_id"])
 
     # TODO: bug - les questions avancent toutes seules puisque la page se 'refreche' toutes seule
 
 
 
-    return render_template("game.html", progress = game_progress[0]["actif_question"], 
+    return render_template("game.html", progress = player_progress[0]["progress"], 
                                         question = question[0]["question"], 
                                         answer1=question[0]["answer1"], 
                                         answer2=question[0]["answer2"], 
                                         answer3=question[0]["answer3"], 
                                         answer4=question[0]["answer4"],
                                         gamecode = gamecode,
-                                        score = score[0]["score"])
+                                        score = score)
 
 
 @app.route("/creategame", methods=["GET", "POST"])
@@ -232,7 +234,24 @@ def creategame():
 
         subject = request.form.get("subject")
         number_of_questions = request.form.get("number_of_questions")
+
+        # Ensure number of questions was submitted
+        if not request.form.get("number_of_questions"):
+            return apology("must provide numer of questions", 403)
+
+        if int(number_of_questions) <= 1 or int(number_of_questions) >= 15:
+            return apology( "Sorry the number of questions but be between 1 and 15")
+
+
         time = request.form.get("time")
+
+        # Ensure time was submitted
+        if not request.form.get("time"):
+            return apology("must provide time", 403)
+
+        if int(time) <= 3 or int(time) >= 20:
+            return apology( "Sorry the time must be between 3 and 20")
+
         # Randomly generate game code
         letters = string.ascii_uppercase
         game_code = ''.join(random.choice(letters) for i in range(6))
