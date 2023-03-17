@@ -162,6 +162,10 @@ def joingame(gamecode):
 
     if game_progress[0]["actif_question"] != -1:
 
+        # Update current question
+        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(player_progress[0]["progress"])+1, gamecode)
+        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
+
         # Find the current question for games
         question_id = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ? and question_number = ?", game_id[0]["game_id"], player_progress[0]["progress"])
 
@@ -176,7 +180,7 @@ def joingame(gamecode):
             # Erase player from database
             rows = db.execute("DELETE FROM actif_players WHERE user_id = ?", session["user_id"])
 
-            return render_template("results.html", player=player[0]["username"], score = score[0]["score"])
+            return render_template("results.html", player=player[0]["username"], score = score)
         
         # Select question
         question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", question_id[0]["question_id"])
@@ -200,10 +204,6 @@ def joingame(gamecode):
         return  render_template("game.html", progress = game_progress[0]["actif_question"])
 
     if request.method == "POST":
-
-        # Update current question
-        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(player_progress[0]["progress"])+1, gamecode)
-        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
 
         score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id=?", session["user_id"], game_id[0]["game_id"])
 
