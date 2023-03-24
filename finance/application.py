@@ -102,16 +102,18 @@ def admingame(gamecode):
     else:
         # Insert user into database - same line of code as before
         player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
-        if player_exists == []:
+        
+        player_same = False
+
+        # TODO: regarder la logique
+        for user in player_exists:
+            if session["user_id"] == int(user["user_id"]):
+                player_same = True
+                break
+
+        if player_same == False:
             rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
 
-        # TO DO: regarder la logique
-        for user in player_exists:
-            if session["user_id"] != int(user["user_id"]):
-                rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
-                break
-            else:
-                break
         
         # Check if game code is valid
         if game_id == []:
@@ -122,7 +124,7 @@ def admingame(gamecode):
         player_id = db.execute("SELECT user_id FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
         players = []
         for i in range(len(player_id)):
-            players += db.execute("SELECT username FROM users WHERE id = ?", player_id[0]["user_id"])
+           players += db.execute("SELECT username FROM users WHERE id = ?", player_id[i]["user_id"])
 
         return render_template("admin.html", players=players, gamecode=gamecode)
 
@@ -137,6 +139,36 @@ def joingame(gamecode):
     if game_id == []:
         # TODO: improve experience 
         return apology("Incorrect game code", 403)
+    
+    # Find status of game
+    game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
+    # If not progress:
+    if game_progress == []:
+        return apology ("Something went wrong when retrieving game progress, please try again", 403)
+
+    # Find time for the question
+    time = db.execute("SELECT time_for_each_question FROM actif_games WHERE game_code = ?", gamecode)
+    if time == []:
+        return apology ("Something went wrong when retrieving the maximum time per question, please try again", 403)
+
+
+    if int(game_progress[0]["actif_question"]) == -1:
+            
+            player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
+            
+            # Temporary variable to see if the current player is already in the list of players/in the database
+            player_same = False
+
+            # Goes over all of the players to check if current player is not in it
+            for user in player_exists:
+                if session["user_id"] == int(user["user_id"]):
+                    player_same = True
+                    break
+
+            # Inserts player into database if he is new
+            if player_same == False:
+                rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
+            return  render_template("game.html", progress = game_progress[0]["actif_question"], time = time[0]["time_for_each_question"])
 
     # Find player progress
     player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
@@ -144,27 +176,19 @@ def joingame(gamecode):
     if player_progress == []:
         return apology ("Something went wrong when retrieving player progress, please try again", 403)
 
-    # Find status of game
-    game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
-    # If not progress:
-    if game_progress == []:
-        return apology ("Something went wrong when retrieving game progress, please try again", 403)
-
     # Find player score
-    score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id = ?", session["user_id"], game_id[0]["game_id"])[0]["score"]
+    score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id = ?", session["user_id"], game_id[0]["game_id"])
     if score == []:
         return apology ("Something went wrong when retrieving player score, please try again", 403)
+    
+    score = int(score[0]["score"])
 
-    # Find time for the question
-    time = db.execute("SELECT time_for_each_question FROM actif_games WHERE game_code = ?", gamecode)
-    if time == []:
-        return apology ("Something went wrong when retrieving the maximum time per question, please try again", 403)
-
+    
     if game_progress[0]["actif_question"] != -1:
 
         # Update current question
-        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(player_progress[0]["progress"])+1, gamecode)
         rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
+        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(player_progress[0]["progress"])+1, gamecode)
 
         # Find the current question for games
         question_id = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ? and question_number = ?", game_id[0]["game_id"], player_progress[0]["progress"])
@@ -180,6 +204,7 @@ def joingame(gamecode):
             # Erase player from database
             rows = db.execute("DELETE FROM actif_players WHERE user_id = ?", session["user_id"])
 
+
             return render_template("results.html", player=player[0]["username"], score = score)
         
         # Select question
@@ -189,31 +214,16 @@ def joingame(gamecode):
         if question == []:
             return apology ("Something went wrong when retrieving the question, please try again", 403)
 
-    else:
-        # Insert into database new player
-        player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
-        
-        if player_exists == []:
-            rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
-
-        for user in player_exists:
-            if session["user_id"] != int(user["user_id"]):
-                rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
-                break
-
-        return  render_template("game.html", progress = game_progress[0]["actif_question"])
+    
 
     if request.method == "POST":
 
         score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id=?", session["user_id"], game_id[0]["game_id"])
-
+        score = int(score[0]["score"])
         # Check if answer is correct
         if request.form["answer"] == question[0]["correct_answer"]:
-            score = int(score[0]["score"]) + 1
+            score += 1
             rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ? and game_id = ?", score, session["user_id"], game_id[0]["game_id"])
-
-    # TODO: bug - les questions avancent toutes seules puisque la page se 'refreche' toutes seule
-
 
 
     return render_template("game.html", progress = player_progress[0]["progress"], 
@@ -240,7 +250,7 @@ def creategame():
         if not request.form.get("number_of_questions"):
             return apology("must provide numer of questions", 403)
 
-        if int(number_of_questions) <= 1 or int(number_of_questions) >= 15:
+        if int(number_of_questions) <= 1 or int(number_of_questions) >= 16:
             return apology( "Sorry the number of questions but be between 1 and 15")
 
 
@@ -250,7 +260,7 @@ def creategame():
         if not request.form.get("time"):
             return apology("must provide time", 403)
 
-        if int(time) <= 3 or int(time) >= 20:
+        if int(time) <= 3 or int(time) >= 21:
             return apology( "Sorry the time must be between 3 and 20")
 
         # Randomly generate game code

@@ -7,8 +7,18 @@
 {% block main %}
 
 <form class="blankspace" action="/creategame" method="post" style="width: 300px" class="centrer-horizontalement" >
+    <table style="color:white; font-size: 15px ; margin: auto; margin-top:0px; margin-bottom: 40px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <thead>
+            <tr>
+                <th class="text-start">Questions: entre 2 et 15</th>
+            </tr>
+            <tr>
+                <th class="text-start">Temps: entre 4 et 20</th>
+            </tr>
+        </thead>
+    </table>
 
-    <label for="cars">Choose a subject:</label>
+    <label for="cars" style="color:white">Choisis un sujet:</label>
 
     <select name="subject" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         <option value="Histoire">Histoire</option>

@@ -19,15 +19,17 @@
 
 {% block main %}
 
-    <audio controls autoplay loop id="myAudio">
-        <source src="https://vgmsite.com/soundtracks/mario-paint-game-rip/beevmkcpjb/01%20Mario%20Paint.mp3" type="audio/mp3">
+    <audio controls autoplay loop >
+        <source src="finance_musique.mp3" type="audio/mp3">
     </audio>
 
-    <style>
+    <!--<style>
+        id="myAudio"
         #myAudio {
           display: none;
         }
     </style>
+    -->
 
     {% if progress == -1 %}
     <h1>Please Wait</h1>
