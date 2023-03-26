@@ -141,6 +141,19 @@ main img
     display: inline-block;
     font-size: 26px;
 }
+
+.button_rules {
+    background-color: #5D3FD3; /* Blue */
+    border-radius: 10px ;
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+}
+
 /* unvisited link */
 a:link {
 color: white;
@@ -157,6 +170,13 @@ a:hover {
 
 .blankspace{
     padding-top: 200px;
+    padding-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blankspace_2{
+    padding-top: 100px;
     padding-bottom: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -184,4 +204,27 @@ a:hover {
     left: 50%; /* à 50%/50% du parent référent */
     transform: translate(-50%, -50%);
     margin-top: 10%;
+}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    right: 0;
+    background-color: #5D3FD3;
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

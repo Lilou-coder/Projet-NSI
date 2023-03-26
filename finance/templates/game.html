@@ -12,27 +12,26 @@
         }
         
         window.onload = timedRefresh({{time}}*1000);
-        
-        //   -->
+
     </script>
 {% endblock %}
 
 {% block main %}
 
-    <audio controls autoplay loop >
+    <audio controls autoplay loop id="myAudio" >
         <source src="finance_musique.mp3" type="audio/mp3">
     </audio>
 
     <!--<style>
-        id="myAudio"
+        id = "myAudio"
         #myAudio {
           display: none;
         }
-    </style>
-    -->
+    </style> -->
+
 
     {% if progress == -1 %}
-    <h1>Please Wait</h1>
+    <h1>Please wait for the game to start.</h1>
     {% else %}
         <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;">
             Your score is: {{score}} </header>
@@ -55,8 +54,6 @@
             <button href=# id=test class="game-button-down-right" type="submit" name="answer" value = 4> {{ answer4 }} </button>
         </form>
 
- 
-       
     {% endif %}
 
 {% endblock %}
