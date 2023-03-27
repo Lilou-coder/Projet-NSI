@@ -131,15 +131,16 @@ main img
 }
 
 .button {
-    background-color: #5D3FD3; /* Blue */
+    width: 300px; 
+    height: 100px;
+    background-color: #5D3FD3; 
     border-radius: 10px ;
     color: rgb(255, 255, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .button_rules {
@@ -151,7 +152,7 @@ main img
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 /* unvisited link */
