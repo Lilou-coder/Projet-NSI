@@ -71,8 +71,8 @@
 71,SVT,Un taureau peut il porter un bebe dans son ventre ?,Non car c est un ovipare,Oui car la femelle ne peut pas,Non car c est un male,Oui car c est un vivipare,3
 72,SVT,Quel animal est ovipare?,Le criquet,La chevre,Le panda,La vache,1
 73,SVT,Quel animal est vivipare?,Le crocodile,Le criquet,Le moineau,L elephant,4
-74,SVT,Qu est ce qu un animal vivipare?,C est un animal dont les oeufs sont a l interieur de la femelle,C est un animal qui pond des oeufs pour se reproduire,C est un animal dont l embryon se developpe a l interieur de la mere,C est un animal qui pond des embryons,3
-75,SVT,Les oeufs sont ils toujours entoures d une coquille?,"Non, certaines especes animales ont des oeufs mous",Oui sauf pour les serpents,"Non, la poule est la seule espece a avoir des oeufs avec une coquille","Oui, les oeufs sont toujours entoures d une coquille pour les proteger",1
+74,SVT,Concernant la selection naturelle quelle affirmation est vrai?, la selection naturelle n est pas liee aux facteurs environnementaux, la selection naturellle favorise les etres forts, la selection naturelle n est pas liee au mecanisme de speciation, la frequence des genes lies aux caracteres avantageux augmentent,4
+75,SVT,Quel est le niveau du vivant selectionne par la selection naturelle ?, Les caracteres, Les genes, Les populations, les individus, 4
 76,SVT,A quel ordre d animaux appartient l ornithorynque?,Rongeurs,Monotremes,Diprotodontes,Anseriformes,2
 77,SVT,Quel est l animal qui retint l attention du naturaliste et paleontologue Charles Darwin lors de son voyage dans l archipel des Galapagos et dont l observation des particularismes insulaires a participe de sa theorie de l evolution sur l origine des especes?,Ver de Terre,Tortue Geante,Iguane,Pinson,4
 78,SVT,De quelle espece de primate l etre humain actuel est il le plus proche genetiquement ?,Gorille,Bonobo,Orang-Outan,Chimpanze,4
@@ -116,5 +116,5 @@
 116,Maths,Que vaut l oppose de l inverse du carre de 2,0.75,-0.25,0.25,-0.4,2
 117,Maths,Multipliez 24 et 62,1248,1869,1488,2044,3
 118,Maths,Le theoreme de talent concerne uniquement:,Les triangles,La tangente d un cercle,les cercles euclidiens,les droites perpendiculaires,1
-119,Maths,"Si le discriminant d une equation du second degre est negatif, alors:",L equation n est pas du second degre,L equation est fausse,La formule quadratique est applicable,Il n y a pas de solutions pour cette equation dans l ensemble des reels,4
+119,Maths,Quelle est la somme de : 3 jours 21 heures 55 minutes 29 secondes et 2 jours 22 heures 42 minutes 36 secondes?, 6 jours 19 heures 38 minutes 5 secondes, 6 jours 19 heures 37 minutes 5 secondes, 6 jours 20 heures 37 minutes 5 secondes, 6 jours 20 heures 38 minutes 5 secondes,4
 120,Maths,Diviser reviens a:,multiplier pas son inverse,multiplier par son oppose,multiplier par sa racine carree,multiplier a la puissance -2,1

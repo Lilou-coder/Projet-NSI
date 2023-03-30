@@ -1,5 +1,6 @@
-#cat createmytables.sql | sqlite3 kraken.db
-# Pour connecter le fichier csv, il faut d'abord, après avoir créer la base de donnée, écrire '.mode csv'
+# cat createmytables.sql | sqlite3 kraken.db
+# Pour connecter le fichier csv, il faut d'abord avoir créé la base de donnée puis se connecter avec 'sqlite3 kraken.db'
+# Ecrire '.mode csv'
 # Suivi de '.import Questions.csv questions'
 
 CREATE TABLE IF NOT EXISTS "users"(

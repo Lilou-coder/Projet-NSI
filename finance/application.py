@@ -141,7 +141,7 @@ def joingame(gamecode):
         return apology("Incorrect game code", 403)
     
     # Find status of game
-    game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_code = ?", gamecode)
+    game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_id = ?", game_id[0]["game_id"])
     # If not progress:
     if game_progress == []:
         return apology ("Something went wrong when retrieving game progress, please try again", 403)
@@ -150,7 +150,6 @@ def joingame(gamecode):
     time = db.execute("SELECT time_for_each_question FROM actif_games WHERE game_code = ?", gamecode)
     if time == []:
         return apology ("Something went wrong when retrieving the maximum time per question, please try again", 403)
-
 
     if int(game_progress[0]["actif_question"]) == -1:
             
@@ -171,7 +170,7 @@ def joingame(gamecode):
             return  render_template("game.html", progress = game_progress[0]["actif_question"], time = time[0]["time_for_each_question"])
 
     # Find player progress
-    player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
+    player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ? and user_id = ?", game_id[0]["game_id"], session["user_id"])
     # If not progress:
     if player_progress == []:
         return apology ("Something went wrong when retrieving player progress, please try again", 403)
@@ -183,14 +182,10 @@ def joingame(gamecode):
     
     score = int(score[0]["score"])
 
-    
+    # If the game has started, find question, check if the game is over, update score as needed, update question
     if game_progress[0]["actif_question"] != -1:
 
-        # Update current question
-        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
-        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(player_progress[0]["progress"])+1, gamecode)
-
-        # Find the current question for games
+        # Find the current question id for game
         question_id = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ? and question_number = ?", game_id[0]["game_id"], player_progress[0]["progress"])
 
         # When finished, lead to another page with the results
@@ -199,14 +194,34 @@ def joingame(gamecode):
             player = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
             # If not player:
             if player == []:
-                return apology ("Something went wrong when inserting player into database, please try again", 403)
+                return apology ("Something went wrong when finding player, please try again", 403)
 
             # Erase player from database
             rows = db.execute("DELETE FROM actif_players WHERE user_id = ?", session["user_id"])
-
-
             return render_template("results.html", player=player[0]["username"], score = score)
-        
+
+        # See if answer is correct
+        if request.method == "POST":
+
+            # Find the previous question that was answered
+            previous_question_id = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ? and question_number = ?", game_id[0]["game_id"], int(player_progress[0]["progress"])-1)
+
+            # Select question
+            question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", previous_question_id[0]["question_id"])
+
+            # If not question, send error message
+            if question == []:
+                return apology ("Something went wrong when retrieving the question, please try again", 403)
+
+            # Check if answer is correct
+            if request.form["answer"] == question[0]["correct_answer"]:
+                score += 1
+                rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ? and game_id = ?", score, session["user_id"], game_id[0]["game_id"])
+
+        # Update current question
+        rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
+        rows = db.execute("UPDATE actif_games SET actif_question = ? WHERE game_code=?", int(game_progress[0]["actif_question"])+1, gamecode)
+
         # Select question
         question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", question_id[0]["question_id"])
 
@@ -214,16 +229,7 @@ def joingame(gamecode):
         if question == []:
             return apology ("Something went wrong when retrieving the question, please try again", 403)
 
-    
-
-    if request.method == "POST":
-
-        score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id=?", session["user_id"], game_id[0]["game_id"])
-        score = int(score[0]["score"])
-        # Check if answer is correct
-        if request.form["answer"] == question[0]["correct_answer"]:
-            score += 1
-            rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ? and game_id = ?", score, session["user_id"], game_id[0]["game_id"])
+        
 
 
     return render_template("game.html", progress = player_progress[0]["progress"], 
