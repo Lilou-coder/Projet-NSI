@@ -4,7 +4,7 @@ import smtplib
 import random
 import string
 
-from datetime import datetime
+from datetime import date
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -52,6 +52,15 @@ if not os.environ.get("API_KEY"):
 @app.route("/")
 @login_required
 def index():
+    # Erase games that have been created before this date
+    game_ids = db.execute("SELECT game_id,date FROM actif_games")
+    
+    if game_ids != []:
+        for i in range(len(game_ids)):
+            if game_ids[i]["date"] != date.today().strftime("%d/%m/%Y"):
+                rows = db.execute("DELETE FROM actif_players WHERE game_id = ?", game_ids[i]["game_id"])
+                rows = db.execute("DELETE FROM actif_games WHERE game_id = ?", game_ids[i]["game_id"])
+
     return render_template("index.html",)
 
 @app.route("/jouer")
@@ -247,25 +256,28 @@ def joingame(gamecode):
 @login_required
 def creategame():
     if request.method == "POST":
-        # TODO : prepare for errors
 
+        # Ensure number of questions was submitted
+        if not request.form.get("subject"):
+            return apology("must provide subject", 403)
         subject = request.form.get("subject")
-        number_of_questions = request.form.get("number_of_questions")
 
         # Ensure number of questions was submitted
         if not request.form.get("number_of_questions"):
             return apology("must provide numer of questions", 403)
+        number_of_questions = request.form.get("number_of_questions")
 
+        # Ensure number of questions is between 1 and 15
         if int(number_of_questions) <= 1 or int(number_of_questions) >= 16:
             return apology( "Sorry the number of questions but be between 1 and 15")
 
 
-        time = request.form.get("time")
-
         # Ensure time was submitted
         if not request.form.get("time"):
             return apology("must provide time", 403)
+        time = request.form.get("time")
 
+        # Ensure time is between 3 and 20 seconds
         if int(time) <= 3 or int(time) >= 21:
             return apology( "Sorry the time must be between 3 and 20")
 
@@ -274,14 +286,16 @@ def creategame():
         game_code = ''.join(random.choice(letters) for i in range(6))
 
         # Store information
-        rows = db.execute("INSERT INTO actif_games (user_id, game_code, date, master, actif_question, question_time_stamp, time_for_each_question, subject, number_of_questions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", session["user_id"], game_code, datetime.now(), True, "-1", datetime.now(), time, subject, number_of_questions)
+        rows = db.execute("INSERT INTO actif_games (user_id, game_code, date, master, actif_question, time_for_each_question, subject, number_of_questions) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", session["user_id"], game_code, date.today().strftime("%d/%m/%Y"), True, "-1", time, subject, number_of_questions)
         
         # Fill in question_for_games table to have the questions for the new game
 
         game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", game_code)
+        question_id = db.execute("SELECT id FROM questions WHERE subject = ? ORDER BY RANDOM() LIMIT ?", subject, number_of_questions)
+        if question_id == []:
+            return apology ("sorry there was a problem retreiving the questions", 403)
 
-        for i in range (int(number_of_questions)):
-            question_id = db.execute("SELECT id FROM questions WHERE subject = ? ORDER BY RANDOM() LIMIT ?", subject, number_of_questions)
+        for i in range (len(question_id)):
             rows = db.execute("INSERT INTO question_for_game (game_id, question_number, question_id) VALUES (?, ?, ?)", game_id[0]["game_id"], i, question_id[i]["id"])
 
 
@@ -403,16 +417,15 @@ def register():
             return apology("must provide password again")
 
         # Ensure password is strong
-        #elif not re.match(r'[A-Za-z0-9@#$%^&+=]{8,}', request.form.get("password")):
-            #return apology("choose a stronger password")
-        
+        elif not re.match(r'[A-Za-z0-9@#$%^&+=]{8,}', request.form.get("password")):
+            return apology("choose a stronger password")
 
 
         # Check if passwords are the same
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if password != confirmation:
-            return apology("both passwords must be identical")
+            return apology("both passwords must be identical", 403)
 
         # Store information
         rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(password))

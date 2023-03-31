@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS "actif_games"(
     "date" TEXT NOT NULL, 
     "master" BOOLEAN NOT NULL, 
     "actif_question" INTEGER NOT NULL, 
-    "question_time_stamp" TEXT NOT NULL,
     "time_for_each_question" NOT NULL,
     "subject" TEXT NOT NULL,
     "number_of_questions" NOT NULL);
