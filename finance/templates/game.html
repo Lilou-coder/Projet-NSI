@@ -12,7 +12,6 @@
         }
         
         window.onload = timedRefresh({{time}}*1000);
-
     </script>
 {% endblock %}
 
@@ -33,6 +32,18 @@
     {% if progress == -1 %}
     <h1 style="color:white">Attendez que le jeu commence.</h1>
     {% else %}
+    <h3>Il vous reste <span id="time"></span> secondes
+        <script>
+            var timer = {{time}};; // Crée un timer
+
+            function decrement() {
+                timer--; // enleve a au timer
+                document.getElementById("time").innerHTML=timer; // Envoie la nouvelle valeur au timer
+            }   
+              
+            const intervalId = setInterval(decrement, 1000); // exécute la fonction toutes les secondes
+        </script>
+    </h3>
         <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;">
             Score: {{score}} </header>
         <table style="color:white; font-size: 30px ; margin: auto; margin-top:20px; margin-bottom: 80px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">

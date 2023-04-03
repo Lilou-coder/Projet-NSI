@@ -43,6 +43,18 @@ def login_required(f):
     return decorated_function
 
 
+def verify_answer(question_id, game_id, user_id, score, answer):
+    # Select question
+    question = db.execute("SELECT correct_answer FROM questions WHERE id = ?", question_id)
+    # If not question, send error message
+    if question == []:
+        return apology ("Something went wrong when retrieving the question, please try again", 403)
+
+    # Check if answer is correct
+    if answer == question[0]["correct_answer"]:
+        score += 1
+        rows = db.execute("UPDATE actif_players SET score = ? WHERE user_id = ? and game_id = ?", score, user_id, game_id)
+    return score
 
 
 def create_email(first_name, last_name, email, idea, from_email):
