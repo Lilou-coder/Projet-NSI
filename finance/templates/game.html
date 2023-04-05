@@ -6,12 +6,12 @@
 
 {% block javascript %}
     <script>
-        <!--
+        
         function timedRefresh(timeoutPeriod) {
             setTimeout("location.reload(true);",timeoutPeriod);
         }
         
-        window.onload = timedRefresh({{time}}*1000);
+        window.onload = timedRefresh( '{{ time }}' * 1000);
         
     </script>
 {% endblock %}
@@ -28,45 +28,64 @@
           display: none;
         }
     </style> -->
-
-
+    
     {% if progress == -1 %}
     <h1 style="color:white;">Attendez que le jeu commence.</h1>
     {% else %}
-    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> Temps: <span id="time"></span> 
-        <script>
-            var timer = {{time}};; // Crée un timer
+    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> 
+        Questions restantes: <span id="nb_qust_rst" ></span> 
+    </header>
 
+    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> Temps: <span id="time"></span> 
+        <script type="text/javascript">
+            // Crée un timer
+            var timer = '{{ time }}';; 
+
+            // Crée un la variable contenant le nombre de questions restantes
+            var nombre_de_questions_restantes = '{{ number_of_questions_in_game }}' - '{{ progress }}';; 
+
+            // envoie la valeur initiale de timer
+            document.getElementById("time").innerHTML=timer; 
+
+            //envoie la valeur du nombre de questions restantes
+            document.getElementById("nb_qust_rst").innerHTML=nombre_de_questions_restantes; 
             function decrement() {
-                timer--; // enleve a au timer
-                document.getElementById("time").innerHTML=timer; // Envoie la nouvelle valeur au timer
+                
+                // enleve a au timer
+                timer--; 
+
+                // Envoie la nouvelle valeur au timer
+                document.getElementById("time").innerHTML=timer; 
             }
-              
-            const intervalId = setInterval(decrement, 1000); // exécute la fonction toutes les secondes
             
+            // exécute la fonction toutes les secondes
+            const intervalId = setInterval(decrement, 1000); 
         </script>
     </header>
-        <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;">
-            Score: {{score}} </header>
-        <table style="color:white; font-size: 30px ; margin: auto; margin-top:20px; margin-bottom: 80px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-            <thead>
-                <tr>
-                    <th class="text-start">{{ question }}</th>
-                </tr>
-            </thead>
-        </table>
+    
+    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;">
+        Score: {{score}} 
+    </header>
+    
+    <table style="color:white; font-size: 30px ; margin: auto; margin-top:20px; margin-bottom: 80px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <thead>
+            <tr>
+                <th class="text-start">{{ question }}</th>
+            </tr>
+        </thead>
+    </table>
 
 <!-- Button of game -->       
         
-        <form method = "post">
-            <button href=# id=test class="game-button-up-right" type="submit" name="answer" value = 1> {{ answer1 }} </button>
-            <button href=# id=test class="game-button-up-left" type="submit" name="answer" value = 2> {{ answer2 }} </button>
-        </form>
-        <form method = "post">
-            <button href=# id=test class="game-button-down-left" type="submit" name="answer" value = 3> {{ answer3 }} </button>
-            <button href=# id=test class="game-button-down-right" type="submit" name="answer" value = 4> {{ answer4 }} </button>
-        </form>
+<form method = "post">
+    <button href=# id=test class="game-button-up-right" type="submit" name="answer" value = 1> {{ answer1 }} </button>
+    <button href=# id=test class="game-button-up-left" type="submit" name="answer" value = 2> {{ answer2 }} </button>
+</form>
+<form method = "post">
+    <button href=# id=test class="game-button-down-left" type="submit" name="answer" value = 3> {{ answer3 }} </button>
+    <button href=# id=test class="game-button-down-right" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+</form>
 
-    {% endif %}
+{% endif %}
 
 {% endblock %}
