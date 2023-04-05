@@ -71,7 +71,7 @@ def jouer():
 
 @app.route("/joingame", methods=["GET", "POST"])
 @login_required
-def joining_game():
+def joingame():
     
     # Ensure username was submitted
     if request.method == "POST":
@@ -140,7 +140,7 @@ def admingame(gamecode):
 
 @app.route("/games/<gamecode>", methods=["GET", "POST"])
 @login_required
-def joingame(gamecode):
+def game(gamecode):
 
     # Find game_id
     game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
@@ -257,6 +257,7 @@ def joingame(gamecode):
                                         answer2=question[0]["answer2"], 
                                         answer3=question[0]["answer3"], 
                                         answer4=question[0]["answer4"],
+                                        number_of_questions_in_game = number_of_questions_in_game[0]["number_of_questions"],
                                         gamecode = gamecode,
                                         score = score,
                                         time = time[0]["time_for_each_question"])
