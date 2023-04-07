@@ -14,20 +14,25 @@
         window.onload = timedRefresh( '{{ time }}' * 1000);
         
     </script>
+    <script>
+        // Crée un timer
+        var timer = '{{ time }}';; 
+
+        // Crée un la variable contenant le nombre de questions restantes
+        var nombre_de_questions_restantes = '{{ number_of_questions_in_game }}' - '{{ progress }}';; 
+
+        function decrement() {
+                
+            // enleve a au timer
+            timer--; 
+    
+            // Envoie la nouvelle valeur au timer
+            document.getElementById("time").innerHTML=timer; 
+        }
+    </script>
 {% endblock %}
 
 {% block main %}
-
-    <!-- <audio controls autoplay loop id="myAudio" >
-        <source src="finance_musique.mp3" type="audio/mp3">
-    </audio>
-
-    <style>
-        id = "myAudio"
-        #myAudio {
-          display: none;
-        }
-    </style> -->
     
     {% if progress == -1 %}
     <h1 style="color:white;">Attendez que le jeu commence.</h1>
@@ -36,30 +41,17 @@
         Questions restantes: <span id="nb_qust_rst" ></span> 
     </header>
 
-    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> Temps: <span id="time"></span> 
+    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> 
+        Temps: <span id="time"></span> 
         <script type="text/javascript">
-            // Crée un timer
-            var timer = '{{ time }}';; 
-
-            // Crée un la variable contenant le nombre de questions restantes
-            var nombre_de_questions_restantes = '{{ number_of_questions_in_game }}' - '{{ progress }}';; 
-
             // envoie la valeur initiale de timer
             document.getElementById("time").innerHTML=timer; 
 
-            //envoie la valeur du nombre de questions restantes
-            document.getElementById("nb_qust_rst").innerHTML=nombre_de_questions_restantes; 
-            function decrement() {
-                
-                // enleve a au timer
-                timer--; 
-
-                // Envoie la nouvelle valeur au timer
-                document.getElementById("time").innerHTML=timer; 
-            }
-            
             // exécute la fonction toutes les secondes
-            const intervalId = setInterval(decrement, 1000); 
+            const intervalId = setInterval(decrement, 1000);
+
+            //envoie la valeur du nombre de questions restantes
+            document.getElementById("nb_qust_rst").innerHTML=nombre_de_questions_restantes;  
         </script>
     </header>
     

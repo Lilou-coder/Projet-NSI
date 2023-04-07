@@ -76,11 +76,9 @@ def joingame():
     # Ensure username was submitted
     if request.method == "POST":
 
-        # TODO: perfect code number
         if not request.form.get("game_code"):
-            return apology("must provide game code", 403)
+            return apology("must provide game code", 401)
 
-        # TODO: finish page
         # Redirect user to game page
         gamecode = request.form.get("game_code")
         return redirect("/games/" + gamecode)
@@ -113,22 +111,23 @@ def admingame(gamecode):
         # Insert user into database - same line of code as before
         player_exists = db.execute("SELECT user_id FROM actif_players WHERE game_id=?", game_id[0]["game_id"])
         
+        # Variable used to check if player is already in the game
         player_same = False
 
-        # TODO: regarder la logique
+        # Iterates over all the players in game and changes the variable 'player_same' to true if the players is in the game
         for user in player_exists:
             if session["user_id"] == int(user["user_id"]):
                 player_same = True
                 break
-
+        
+        # If the player is not in the game, player_same == False, so the player is inserted into the database
         if player_same == False:
             rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
 
         
         # Check if game code is valid
         if game_id == []:
-            # TODO: improve experience 
-            return apology("Incorrect game code", 403)
+            return apology("Incorrect game code", 401)
         
         game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
         player_id = db.execute("SELECT user_id FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
@@ -147,8 +146,7 @@ def game(gamecode):
 
     # Check if game code is valid
     if game_id == []:
-        # TODO: improve experience 
-        return apology("Incorrect game code", 403)
+        return apology("Incorrect game code", 404)
     
     # Find status of game
     game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_id = ?", game_id[0]["game_id"])
@@ -272,12 +270,12 @@ def creategame():
 
         # Ensure number of questions was submitted
         if not request.form.get("subject"):
-            return apology("must provide subject", 403)
+            return apology("must provide subject", 401)
         subject = request.form.get("subject")
 
         # Ensure number of questions was submitted
         if not request.form.get("number_of_questions"):
-            return apology("must provide numer of questions", 403)
+            return apology("must provide numer of questions", 401)
         number_of_questions = request.form.get("number_of_questions")
 
         # Ensure number of questions is between 1 and 15
@@ -287,7 +285,7 @@ def creategame():
 
         # Ensure time was submitted
         if not request.form.get("time"):
-            return apology("must provide time", 403)
+            return apology("must provide time", 401)
         time = request.form.get("time")
 
         # Ensure time is between 3 and 20 seconds
@@ -329,19 +327,19 @@ def login():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username", 401)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password", 401)
 
-        # TODO : fix bug where username is already taken
+
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+            return apology("invalid username and/or password", 401)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -373,19 +371,19 @@ def contactez_nous():
 
         # Ensure first_name was submitted
         if not request.form.get("first_name"):
-            return apology("must provide first_name", 403)
+            return apology("must provide first_name", 401)
 
         # Ensure last_name was submitted
         elif not request.form.get("last_name"):
-            return apology("must provide last_name", 403)
+            return apology("must provide last_name", 401)
         
         # Ensure email was submitted
         elif not request.form.get("email"):
-            return apology("must provide email", 403)
+            return apology("must provide email", 401)
             
         # Ensure idea was submitted
         elif not request.form.get("idea"):
-            return apology("must provide idea", 403)
+            return apology("must provide idea", 401)
         
         # Send email with information from form
         send_from = os.environ["google_smtp_user"]
@@ -398,7 +396,7 @@ def contactez_nous():
                  request.form.get("idea"), send_from))
         except: 
 
-            return apology("Sorry, something went wrong")
+            return apology("Sorry, something went wrong, please try again", 421)
         finally: 
             server.quit()
 
@@ -414,7 +412,7 @@ def register():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username", 401)
         
         # Ensure username is not already in use
         username = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
@@ -423,7 +421,7 @@ def register():
         
         # Ensure password was submitted
         if not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password", 401)
 
         # Ensure second password was submitted and is the same as first
         elif not request.form.get("confirmation"):
@@ -438,7 +436,7 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if password != confirmation:
-            return apology("both passwords must be identical", 403)
+            return apology("both passwords must be identical", 401)
 
         # Store information
         rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(password))
