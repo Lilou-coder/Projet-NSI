@@ -22,16 +22,16 @@
 
         <thead>
             <tr>
-                <th class="text-start" style="color:white" >Ton code est: {{gamecode}}</th>
+                <th class="text-start; white_question" >Ton code est: {{gamecode}}</th>
             </tr>
         </thead><thead>
             <tr>
-                <th class="text-start" style="color: white">Joueurs</th>
+                <th class="text-start: white_question" >Joueurs</th>
             </tr>
         </thead>
         {% for player in players %}
         <tr>
-            <td class="text-start" style="color: white">{{ player["username"] }}</td>
+            <td class="text-start; white_question" >{{ player["username"] }}</td>
         </tr>
         {% endfor %}
     </table>

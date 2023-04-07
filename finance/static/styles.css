@@ -1,3 +1,25 @@
+/* colors et police */
+.white_question{
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.violet_form{
+    background-color: rgba(141, 168, 236, 0.915);
+    border-color: black;
+    color: black;
+    border-radius: 10%;
+}
+
+.font{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+
 nav .navbar-brand
 {
     /* size for brand */

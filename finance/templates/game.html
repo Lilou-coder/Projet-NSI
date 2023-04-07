@@ -14,52 +14,45 @@
         window.onload = timedRefresh( '{{ time }}' * 1000);
         
     </script>
-    <script>
-        // Crée un timer
-        var timer = '{{ time }}';; 
-
-        // Crée un la variable contenant le nombre de questions restantes
-        var nombre_de_questions_restantes = '{{ number_of_questions_in_game }}' - '{{ progress }}';; 
-
-        function decrement() {
-                
-            // enleve a au timer
-            timer--; 
-    
-            // Envoie la nouvelle valeur au timer
-            document.getElementById("time").innerHTML=timer; 
-        }
-    </script>
 {% endblock %}
 
 {% block main %}
-    
+
     {% if progress == -1 %}
     <h1 style="color:white;">Attendez que le jeu commence.</h1>
     {% else %}
-    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> 
-        Questions restantes: <span id="nb_qust_rst" ></span> 
-    </header>
 
-    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;"> 
-        Temps: <span id="time"></span> 
+    
+        <pre style="color: white"> Questions restantes: <span id="nb_qust_rst" ></span>    Score: {{score}}    Temps: <span id="time"></span> </pre>
         <script type="text/javascript">
+            // Crée un timer
+            var timer = '{{ time }}';; 
+
+            // Crée un la variable contenant le nombre de questions restantes
+            var nombre_de_questions_restantes = '{{ number_of_questions_in_game }}' - '{{ progress }}';; 
+
             // envoie la valeur initiale de timer
             document.getElementById("time").innerHTML=timer; 
 
-            // exécute la fonction toutes les secondes
-            const intervalId = setInterval(decrement, 1000);
-
             //envoie la valeur du nombre de questions restantes
-            document.getElementById("nb_qust_rst").innerHTML=nombre_de_questions_restantes;  
+            document.getElementById("nb_qust_rst").innerHTML=nombre_de_questions_restantes; 
+            function decrement() {
+                
+                // enleve a au timer
+                timer--; 
+
+                // Envoie la nouvelle valeur au timer
+                document.getElementById("time").innerHTML=timer; 
+            }
+            
+            // exécute la fonction toutes les secondes
+            const intervalId = setInterval(decrement, 1000); 
         </script>
     </header>
     
-    <header style="color:white; font-weight: bold ; padding: 20px 20px; text-align: right;">
-        Score: {{score}} 
-    </header>
     
-    <table style="color:white; font-size: 30px ; margin: auto; margin-top:20px; margin-bottom: 80px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    
+    <table class="white_question" style="font-size: 30px ; margin: auto; margin-top:20px; margin-bottom: 80px" >
         <thead>
             <tr>
                 <th class="text-start">{{ question }}</th>
