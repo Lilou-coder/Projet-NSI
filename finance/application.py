@@ -1,6 +1,5 @@
 import os
 import re
-import smtplib
 import random
 import string
 
@@ -11,7 +10,6 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-#from flask.ext.socketio import SocketIO, emit
 
 from helpers import apology, login_required,verify_answer, create_email
 
@@ -40,14 +38,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///kraken.db")
 
-# Make sure API key is set
-if not os.environ.get("API_KEY"):
-    raise RuntimeError("API_KEY not set")
-
-#@socketio.on('my event')                          # Decorator to catch an event called "my event":
-#def test_message(message):                        # test_message() is the event callback function.
-    #emit('my response', {'data': 'got it!'})      # Trigger a new event called "my response" 
-                                                  # that can be caught by another callback later in the program.
 
 @app.route("/")
 @login_required
@@ -176,7 +166,7 @@ def game(gamecode):
             # Inserts player into database if he is new
             if player_same == False:
                 rows = db.execute("INSERT INTO actif_players (user_id, game_id, score, progress) VALUES (?, ?, ?, ?)", session["user_id"], game_id[0]["game_id"], "0", "-1")
-            return  render_template("game.html", progress = game_progress[0]["actif_question"], time = time[0]["time_for_each_question"])
+            return  render_template("game.html", progress = game_progress[0]["actif_question"], time = "2")
 
     # Find player progress
     player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ? and user_id = ?", game_id[0]["game_id"], session["user_id"])
@@ -216,14 +206,8 @@ def game(gamecode):
                 # Verify answer and update score
                 score = verify_answer(previous_question_id[0]["question_id"], game_id[0]["game_id"], session["user_id"], score, answer)
 
-            player = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
-            # If not player:
-            if player == []:
-                return apology ("Something went wrong when finding player, please try again", 403)
 
-            # Erase player from database
-            # rows = db.execute("DELETE FROM actif_players WHERE user_id = ?", session["user_id"])
-            return render_template("results.html", player=player[0]["username"], score = score)
+            return redirect("/games/" + gamecode + "/results")
 
         # See if answer is correct
         if request.method == "POST":
@@ -236,6 +220,7 @@ def game(gamecode):
 
             #Verify answer and update score
             score = verify_answer(previous_question_id[0]["question_id"], game_id[0]["game_id"], session["user_id"], score, answer)
+
 
         # Update current question
         rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
@@ -261,6 +246,35 @@ def game(gamecode):
                                         time = time[0]["time_for_each_question"])
 
 
+@app.route("/games/<gamecode>/results", methods=["GET"])
+@login_required
+def results(gamecode):
+    
+    # Find game_id
+    game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
+
+    # Check if game code is valid
+    if game_id == []:
+        return apology("Incorrect game code", 404)
+    
+    # Find players and their scores
+    players = db.execute("SELECT user_id,score FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
+    # If not players:
+    if players == []:
+        return apology ("Something went wrong when finding the players, please try again", 403)
+
+    usernames = []
+
+    for i in range(len(players)):
+        username = db.execute("SELECT username FROM users WHERE id = ?", players[i]["user_id"])
+        # If not players:
+        if username == []:
+            return apology ("Something went wrong when finding the username, please try again", 403)
+
+        username = username[0]["username"]
+        usernames.append({"username": username, "score": players[i]["score"]})
+
+    return render_template("results.html", usernames = usernames)
 
 
 @app.route("/creategame", methods=["GET", "POST"])
@@ -279,8 +293,8 @@ def creategame():
         number_of_questions = request.form.get("number_of_questions")
 
         # Ensure number of questions is between 1 and 15
-        if int(number_of_questions) <= 1 or int(number_of_questions) >= 16:
-            return apology( "Sorry the number of questions but be between 1 and 15")
+        if int(number_of_questions) < 1 or int(number_of_questions) > 16:
+            return apology( "Sorry the number of questions but be between 2 and 15")
 
 
         # Ensure time was submitted
@@ -288,9 +302,9 @@ def creategame():
             return apology("must provide time", 401)
         time = request.form.get("time")
 
-        # Ensure time is between 3 and 20 seconds
-        if int(time) <= 3 or int(time) >= 21:
-            return apology( "Sorry the time must be between 3 and 20")
+        # Ensure time is between 5 and 20 seconds
+        if int(time) < 2 or int(time) > 21:
+            return apology( "Sorry the time must be between 3 and 20 seconds")
 
         # Randomly generate game code
         letters = string.ascii_uppercase
@@ -363,46 +377,6 @@ def logout():
     return redirect("/")
 
 
-@app.route("/contacteznous", methods=["GET", "POST"])
-@login_required
-def contactez_nous():
-
-    if request.method == "POST":
-
-        # Ensure first_name was submitted
-        if not request.form.get("first_name"):
-            return apology("must provide first_name", 401)
-
-        # Ensure last_name was submitted
-        elif not request.form.get("last_name"):
-            return apology("must provide last_name", 401)
-        
-        # Ensure email was submitted
-        elif not request.form.get("email"):
-            return apology("must provide email", 401)
-            
-        # Ensure idea was submitted
-        elif not request.form.get("idea"):
-            return apology("must provide idea", 401)
-        
-        # Send email with information from form
-        send_from = os.environ["google_smtp_user"]
-        try:
-            server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-            server.ehlo()
-            server.login(send_from , os.environ["google_smtp_password"])
-            server.sendmail(send_from, send_from, create_email(
-                 request.form.get("first_name"), request.form.get("last_name"), request.form.get("email"),
-                 request.form.get("idea"), send_from))
-        except: 
-
-            return apology("Sorry, something went wrong, please try again", 421)
-        finally: 
-            server.quit()
-
-        return redirect("/")
-    else:
-        return render_template("contacteznous.html")
 
 
 @app.route("/register", methods=["GET", "POST"])

@@ -49,7 +49,7 @@ nav .navbar-brand .red
     text-align: center;
     margin-top: auto;
     display: inline-block;
-    font-size: 20px ;
+    font-size: 2vw ;
 }
 
 .game-button-up-left { 
@@ -64,7 +64,7 @@ nav .navbar-brand .red
     text-align: center;
     margin-top: auto;
     display: inline-block;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 .game-button-down-right {
@@ -79,7 +79,7 @@ nav .navbar-brand .red
     text-align: center;
     margin-top: 20px;
     display: inline-block;
-    font-size:20px;
+    font-size:2vw;
 }
 
 .game-button-down-left { 
@@ -94,7 +94,7 @@ nav .navbar-brand .red
     text-align: center;
     margin-top: 20px;
     display: inline-block;
-    font-size: 20px;
+    font-size: 2vw;
 }
 
 /* End of button position*/ 

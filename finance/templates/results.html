@@ -4,21 +4,52 @@
     Game
 {% endblock %}
 
+{% block javascript %}
+    <script>
+        
+        function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);",timeoutPeriod);
+        }
+        
+        window.onload = timedRefresh(5000);
+        
+    </script>
+{% endblock %}
+
 {% block main %}
 
-    <header style="color: white; font-size: 25px; font-weight: bold">Bravo {{player}}, vous avez eu {{score}} réponses justes!</header>
-        <img src= "https://www.silhouettepng.com/wp-content/uploads/2/Octopus-PNG-Silhouette.png" width=30% height=30% style="margin-top: 3em;">
+<head>
+    <audio controls autoplay loop id="myAudio" style="display: none">
+        <source src="https://github.com/Lilou-coder/Projet-NSI/raw/main/musique_Zh8uWuGw.mp3" type="audio/mp3">
+    </audio>
+</head>
 
-            <style> 
-                button {
-                    position: absolute; 
-                    left: 50%; 
-                    top: 72%; 
-                    transform: translate(-50%, -50%); 
-                }
-            </style>
-        
-    <button class="button" style="margin-top: 3em;"><a class = "nav_link" href = "http://127.0.0.1:5000/jouer" >Rejouer!</a></button>
+<table class="table tablestriped">
+    <thead>   
+        <tr>
+            <th class="text-start: white_question" >Scores</th>
+        </tr>
+    </thead>
+    {% for user in usernames %}
+    <tr>
+        <td class="text-start; white_question">Bravo {{ user["username"] }}, vous avez eu {{ user["score"] }} réponses justes!</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<img src= "https://www.silhouettepng.com/wp-content/uploads/2/Octopus-PNG-Silhouette.png" width=30% height=30% style="margin-top: 3em;">
+
+<style> 
+    button {
+        position: absolute; 
+        left: 50%; 
+        top: 72%; 
+        transform: translate(-50%, -50%); 
+    }
+</style>
+    
+<button class="button" style="margin-top: 3em;"><a class = "nav_link" href = "http://127.0.0.1:5000/jouer" >Rejouer!</a></button>
 
     
 
