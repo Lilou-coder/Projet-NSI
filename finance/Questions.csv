@@ -1,7 +1,7 @@
 1,Geographie,"Parmis les etats suivants, lequel n est pas membre du Commonwealth",l Inde,le Ghana,L Australie,les Etats-Unis,4
 2,Geographie,Quel pays a pour capitale Gaborone ?,le Botswana,la Tanzanie,le Lesotho,le Zimbabwe,1
 3,Geographie,Quelle est la capitale de la Suisse ?,Zuric,Bale,Lausanne,Berne,4
-4,Geographie,Combien d etats federe sInde compte t elle?,30,29,32,31,2
+4,Geographie,Combien d etats federes l Inde compte t elle?,30,29,32,31,2
 5,Geographie,Quelles sont les langues officielles de l Afghanistan?,Hindi et Persan,Persan et Pashtou,Arabe et Turc,Afghan et Anglais,2
 6,Geographie,Quelle ville compte la plus haute densite de population du monde?,Delhi,le Caire,Manille,Sanghai,3
 7,Geographie,Quel pays est le moins densement peuple au monde?,L Arabie Saoudite,le Belarus,L Australie,la Mongolie,4
@@ -16,14 +16,14 @@
 16,Geographie,Quel est le fleuve le plus long de France?,la Moselle,le Rhone,la Loire,la Seine,3
 17,Geographie,Quel est le sommet le plus haut d Europe?,le Kilimandjaro,le Mont Ventoux,le Mont Rose,le Mont Blanc,4
 18,Geographie,Combien de regions la France compte t elle?,18,27,22,13,1
-19,Geographie,Avec combien de pays le France metropolitaine a t elle une frontiere terrestre?,7,6,8,9,3
-20,Geographie,A combien de kilometres de Paris se trouve le departements francais le plus eloigne?,6800km,947km,9180km,855km,3
+19,Geographie,Avec combien de pays la France metropolitaine a t elle une frontiere terrestre?,7,6,8,9,3
+20,Geographie,A combien de kilometres de Paris se trouve le departement francais le plus eloigne?,6800km,947km,9180km,855km,3
 21,Geographie,Laquelle de ces iles est francaise?,la Sardaigne,Hawaii,Sainte-Lucie,la Martinique,4
 22,Geographie,Combien la France metropolitaine compte t elle de mers et d oceans autour d elle?,5,3,2,4,4
 23,Geographie,Quel pourcentage d habitants en France habite en ville?,82 pourcent,69 pourcent,78 pourcents,86 pourcentd,1
 24,Geographie,Depuis quelle ville Francaise le tunnel sous la Manche relie t il la France et l Angleterre?,Calais,Dieppe,Dunkerque,le Havre,1
 25,Geographie,"Parmis ces villes, laquelle se situe le plus au nord de la France?",Grenoble,Lyon,Bordeaux,Marseille,2
-26,Geographie,Quel departements est le moins peuple de France?,la Lozere,la Creuze,le Cher,le Gers,1
+26,Geographie,Quel departement est le moins peuple de France?,la Lozere,la Creuze,le Cher,le Gers,1
 27,Geographie,"Depuis 2016, combien y a t il de regions en France metropolitaine?",5,24,13,17,3
 28,Geographie,"En 2018, combien y avait il d habitants en France?",64.2 millions,58.6 millions,69.5 millions,67.2 millions,4
 29,Geographie,Quelle est la ville la plus etendue du territoire francais?,Paris,Arles,Lyon,Maripasoula,4
@@ -37,7 +37,7 @@
 37,Histoire,En quelle annee a eut lieux la crise des missiles de Cuba?,1962,1974,2004,2001,1
 38,Histoire,En quelle annee a ete conclu le pacte de Varsovie?,1955,1939,1918,1945,1
 39,Histoire,En quelle annee la guerre de coree a t elle commencee?,1948,1950,1962,1964,2
-40,Histoire,Quand l ecriture a t elle invente?,-5400,-6000,-3200,-4600,3
+40,Histoire,Quand l ecriture a t elle ete invente?,-5400,-6000,-3200,-4600,3
 41,Histoire,"En 1 500 av. J C., la conquete du territoire francais commence avec?",les romains,les Celtes,les Belges,les Arabes,2
 42,Histoire,Clovis Ier est le fondateur de la dynastie?,des Charles,carolingienne,des Louis,merovingienne,4
 43,Histoire,Charlemagne est couronne empereur d Occident par le pape Leon III en l an?,700,900,600,800,4
@@ -46,7 +46,7 @@
 46,Histoire,En quelle annee est ne Charles de Gaulle ?,1900,1860,1880,1890,4
 47,Histoire,Comment s appelait l heritier du trone d Autriche durant la premiere guerre mondiale ?,Francois-Alexandre,Francois Karl,Francois-Ferdinand,Francois-Maximilien,3
 48,Histoire,Quand l armistice de la 1er guerre mondiale a t il ete signe?,21-Nov-18,08-Nov-18,15-Nov-18,11-Nov-18,4
-49,Histoire,Quand La Russie signe t elle un traite de paix separe avec l Allemagne ?,1918,1917,1914,1920,2
+49,Histoire,Quand la Russie signe t elle un traite de paix separe avec l Allemagne ?,1918,1917,1914,1920,2
 50,Histoire,Quelle guerre a dure de 1756 a 1763 ?,La guerre de Trente Ans,La guerre d independance,La guerre de Succession d Autriche,La guerre de Sept Ans,2
 51,Histoire,Que se passe t il le 16 decembre 1773 ?,Le Sugar Act,La Boston Tea Party,La Declaration d independance,Le traite de Paris,2
 52,Histoire,Quelle est la capitale politique et intellectuelle de la Nouvelle Angleterre ?,New York,Baltimore,Boston,Philadelphie,3
@@ -66,13 +66,13 @@
 66,SVT,Quel animal dort le plus?,Koala,Paresseux,Chameaux,Chat,1
 67,SVT,Quel animal a pour nom scientifique Passer domesticus ?,Panda,Paresseux,Moineau,Chat,3
 68,SVT,Quel est le nom scientifique de la truite?,Truitus maurus,Bos taurus taurus,Salmo marmoratus,Rhincoson typus,3
-69,SVT,Quel animal a pour nom scientifique  Scorpio maurus ?,Oiseau,Arachnide,Moustique,Escargot,2
+69,SVT,A quelle classe l'animal nommé Scorpio maurus appartient il ?,Oiseau,Arachnide,Moustique,Escargot,2
 70,SVT,Quel est le nom scientifique des loup gris?,Canis lupus,Felis sylvestris catus,Chelonia lupus,Lupus grisulus,1
 71,SVT,Un taureau peut il porter un bebe dans son ventre ?,Non car c est un ovipare,Oui car la femelle ne peut pas,Non car c est un male,Oui car c est un vivipare,3
 72,SVT,Quel animal est ovipare?,Le criquet,La chevre,Le panda,La vache,1
 73,SVT,Quel animal est vivipare?,Le crocodile,Le criquet,Le moineau,L elephant,4
-74,SVT,Concernant la selection naturelle quelle affirmation est vrai?, la selection naturelle n est pas liee aux facteurs environnementaux, la selection naturellle favorise les etres forts, la selection naturelle n est pas liee au mecanisme de speciation, la frequence des genes lies aux caracteres avantageux augmentent,4
-75,SVT,Quel est le niveau du vivant selectionne par la selection naturelle ?, Les caracteres, Les genes, Les populations, les individus, 4
+74,SVT,Concernant la selection naturelle quelle affirmation est vrai?, la selection naturelle n est pas liee aux facteurs environnementaux, la selection naturelle favorise les etres forts, la selection naturelle n est pas liee au mecanisme de speciation, la frequence des genes lies aux caracteres avantageux augmentent,4
+75,SVT,A quel niveau du viavant la selection naturelle agit elle ?, Les caracteres, Les genes, Les populations, les individus, 4
 76,SVT,A quel ordre d animaux appartient l ornithorynque?,Rongeurs,Monotremes,Diprotodontes,Anseriformes,2
 77,SVT,Quel est l animal qui retint l attention du naturaliste et paleontologue Charles Darwin lors de son voyage dans l archipel des Galapagos et dont l observation des particularismes insulaires a participe de sa theorie de l evolution sur l origine des especes?,Ver de Terre,Tortue Geante,Iguane,Pinson,4
 78,SVT,De quelle espece de primate l etre humain actuel est il le plus proche genetiquement ?,Gorille,Bonobo,Orang-Outan,Chimpanze,4
@@ -98,7 +98,7 @@
 98,Maths,Quelle est la racine carree de 542?,23.28,23.07,19.65,35.18,1
 99,Maths,Comment se nomme la puissance 4?,puissance quatrieme,puissance quatuor,puissance delta,puissance quadratique,1
 100,Maths,Quelle est la formule qui permet de calculer l aire d une sphere ?,4 x pi x r x r,pi x r x 4,r x pi x volume,Pi x Pi x 4 x r x r,1
-101,Maths,Qu est  ce qu un triangle isocele ?,Un triangle qui a deux cotes de meme longueur,Un triangle qui a trois cotes de meme longueur,Un triangle qui a un angle droit,Un triangle qui a 2 angles droits,1
+101,Maths,Qu est ce qu un triangle isocele ?,Un triangle qui a deux cotes de meme longueur,Un triangle qui a trois cotes de meme longueur,Un triangle qui a un angle droit,Un triangle qui a 2 angles droits,1
 102,Maths,"Parmi ces figures, laquelle n est pas un polygone ?",trapeze,cercle,carre,triangle,2
 103,Maths,La somme des angles d un triangle est egale a ?,180 degres,270 degres,360 degres,90 degres,1
 104,Maths,Soustrayez 831 et 479:,362,372,382,352,4
@@ -115,6 +115,6 @@
 115,Maths,Qui est le premier mathematicien connu de l histoire ?,Thales de Milet,Zenon d Elee,Hippase de Metaponte,Eudoxe de Cnide,1
 116,Maths,Que vaut l oppose de l inverse du carre de 2,0.75,-0.25,0.25,-0.4,2
 117,Maths,Multipliez 24 et 62,1248,1869,1488,2044,3
-118,Maths,Le theoreme de talent concerne uniquement:,Les triangles,La tangente d un cercle,les cercles euclidiens,les droites perpendiculaires,1
+118,Maths,Le theoreme de Thales concerne uniquement:,Les triangles,La tangente d un cercle,les cercles euclidiens,les droites perpendiculaires,1
 119,Maths,Quelle est la somme de : 3 jours 21 heures 55 minutes 29 secondes et 2 jours 22 heures 42 minutes 36 secondes?, 6 jours 19 heures 38 minutes 5 secondes, 6 jours 19 heures 37 minutes 5 secondes, 6 jours 20 heures 37 minutes 5 secondes, 6 jours 20 heures 38 minutes 5 secondes,4
 120,Maths,Diviser reviens a:,multiplier pas son inverse,multiplier par son oppose,multiplier par sa racine carree,multiplier a la puissance -2,1
