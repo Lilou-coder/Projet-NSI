@@ -69,11 +69,15 @@
 
 <!-- Button of game -->       
         
-<form method = "post">
-    <button href=# id=test class="game-button-up-right" type="submit" name="answer" value = 1> {{ answer1 }} </button>
-    <button href=# id=test class="game-button-up-left" type="submit" name="answer" value = 2> {{ answer2 }} </button>
-    <button href=# id=test class="game-button-down-left" type="submit" name="answer" value = 3> {{ answer3 }} </button>
-    <button href=# id=test class="game-button-down-right" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+<form method = "post" class="question-form">
+    <div class="question-row">
+        <button href=# id=test class="game-button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
+        <button href=# id=test class="game-button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
+    </div>
+    <div class="question-row">
+        <button href=# id=test class="game-button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
+        <button href=# id=test class="game-button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+    </div>
 </form>
 
 {% endif %}

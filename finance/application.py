@@ -3,7 +3,7 @@ import re
 import random
 import string
 
-from datetime import date, datetime
+from datetime import date, timedelta
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -42,12 +42,12 @@ db = SQL("sqlite:///kraken.db")
 @app.route("/")
 @login_required
 def index():
-    # Erase games that have been created before this date
+    # Erase games that have been created two days after
     game_ids = db.execute("SELECT game_id,date FROM actif_games")
     
     if game_ids != []:
         for i in range(len(game_ids)):
-            if game_ids[i]["date"] != date.today().strftime("%d/%m/%Y"):
+            if int(game_ids[i]["date"][:2]) + 1 < int(date.today().strftime("%d/%m/%Y")[:2]):
                 rows = db.execute("DELETE FROM actif_players WHERE game_id = ?", game_ids[i]["game_id"])
                 rows = db.execute("DELETE FROM question_for_game WHERE game_id = ?", game_ids[i]["game_id"])
                 rows = db.execute("DELETE FROM actif_games WHERE game_id = ?", game_ids[i]["game_id"])
@@ -206,6 +206,9 @@ def game(gamecode):
                 # Verify answer and update score
                 score = verify_answer(previous_question_id[0]["question_id"], game_id[0]["game_id"], session["user_id"], score, answer)
 
+            # Update player progress to finish
+            rows = db.execute("UPDATE actif_players SET progress = ? WHERE user_id = ? and game_id=?", int(player_progress[0]["progress"])+1, session["user_id"], game_id[0]["game_id"])
+
 
             return redirect("/games/" + gamecode + "/results")
 
@@ -246,22 +249,23 @@ def game(gamecode):
                                         time = time[0]["time_for_each_question"])
 
 
-@app.route("/games/<gamecode>/results", methods=["GET"])
+@app.route("/games/<gamecode>/results", methods=["GET", "POST"])
 @login_required
 def results(gamecode):
-    
+
     # Find game_id
-    game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
+    game = db.execute("SELECT game_id,number_of_questions FROM actif_games WHERE game_code = ?", gamecode)
 
     # Check if game code is valid
-    if game_id == []:
+    if game == []:
         return apology("Incorrect game code", 404)
     
     # Find players and their scores
-    players = db.execute("SELECT user_id,score FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
+    players = db.execute("SELECT user_id,score,progress FROM actif_players WHERE game_id = ?", game[0]["game_id"])
     # If not players:
     if players == []:
         return apology ("Something went wrong when finding the players, please try again", 403)
+
 
     usernames = []
 
@@ -271,11 +275,45 @@ def results(gamecode):
         if username == []:
             return apology ("Something went wrong when finding the username, please try again", 403)
 
+        # See if player is still playing
+        if players[i]["progress"] > int(game[0]["number_of_questions"]):
+            progress = "a finit"
+        else:
+            progress = "est encore en train de jouer"
+
         username = username[0]["username"]
-        usernames.append({"username": username, "score": players[i]["score"]})
+        usernames.append({"username": username, "score": players[i]["score"], "progress": progress})
 
-    return render_template("results.html", usernames = usernames)
+    return render_template("results.html", usernames = usernames, gamecode = gamecode)
 
+@app.route("/games/<gamecode>/correction")
+@login_required
+def correction(gamecode):
+    
+    # Find game_id
+    game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
+
+    # Check if game code is valid
+    if game_id == []:
+        return apology("There was a problem finding the game id", 404)
+    
+    # Find questions and their answers
+    question_ids = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ?", game_id[0]["game_id"])
+    # If not players:
+    if question_ids == []:
+        return apology ("Something went wrong when finding the players, please try again", 403)
+
+    questions = []
+
+    for i in range(len(question_ids)):
+        # Find text and answer for each question
+        question = db.execute("SELECT question, answer1, answer2, answer3, answer4, correct_answer FROM questions WHERE id = ?", question_ids[i]["question_id"])
+        answer_id = str("answer" + question[0]["correct_answer"])
+        answer = db.execute("SELECT ? FROM questions WHERE id = ?", answer_id, question_ids[i]["question_id"])
+
+        questions.append({"question": question[0]["question"], "answer": question[0][answer_id]})
+
+    return render_template("correction.html", questions = questions)
 
 @app.route("/creategame", methods=["GET", "POST"])
 @login_required
