@@ -277,7 +277,7 @@ def results(gamecode):
 
         # See if player is still playing
         if players[i]["progress"] > int(game[0]["number_of_questions"]):
-            progress = "a finit"
+            progress = "a fini"
         else:
             progress = "est encore en train de jouer"
 

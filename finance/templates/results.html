@@ -24,11 +24,12 @@
     </audio>
 </head>
 
-<table class="table tablestriped">
-    <thead class="text-start: white_question" >
-        Scores
-    </thead>
+<h2 class="white_question" style= "margin:center"> Scores </h2>
+    
+    
     {% for user in usernames %}
+    
+<table class="table tablestriped">
     <tr>
         <td class="text-start; white_question">{{ user["username"] }} a {{ user["score"] }} réponses justes!</td>
         <td class="text-start; white_question">{{ user["username"] }} {{ user["progress"] }}</td>
@@ -37,20 +38,17 @@
 </table>
 
 
-<img src= "https://www.silhouettepng.com/wp-content/uploads/2/Octopus-PNG-Silhouette.png" width=30% height=30% style="margin-top: 3em;">
+<img src= "https://www.silhouettepng.com/wp-content/uploads/2/Octopus-PNG-Silhouette.png" width=30% height=30% style="margin-top: 3em; margin-bottom: 3em;"> 
 
-<style> 
-    button {
-        position: absolute; 
-        left: 50%; 
-        top: 72%; 
-        transform: translate(-50%, -50%); 
-    }
-</style>
     
-<button class="button" style="margin-top: 3em;"><a class = "nav_link" href = "http://127.0.0.1:5000/jouer" >Rejouer!</a></button>
-<button class="button" ><a class = "nav_link" href = "http://127.0.0.1:5000/games/{{ gamecode }}/correction" >Correction!</a></button>
-
+<table class="center">
+    <tr>
+        <td>
+            <button class="button"><a class="nav-link" href="http://127.0.0.1:5000/games/{{ gamecode }}/correction">Correction</a></button>
+            <button class="button"><a class="nav-link" href="http://127.0.0.1:5000/jouer">Jouer</a></button>
+        </td>
+    </tr>
+</table>
 
     
 {% endblock %}
