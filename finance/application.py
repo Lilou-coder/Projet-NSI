@@ -94,6 +94,9 @@ def admingame(gamecode):
         # Update users 'progress' to the first question
         players = db.execute("UPDATE actif_players SET progress = 0 WHERE game_id = ?", game_id[0]["game_id"])
 
+        # Update users 'scores' to 0
+        players = db.execute("UPDATE actif_players SET score = 0 WHERE game_id = ?", game_id[0]["game_id"])
+
         # Redirect user to game page
         return redirect("/games/" + gamecode)
 
@@ -387,14 +390,14 @@ def login():
 
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        username = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(username) != 1 or not check_password_hash(username[0]["hash"], request.form.get("password")):
             return apology("invalid username and/or password", 401)
 
         # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = username[0]["id"]
 
         # Redirect user to home page
         return redirect("/")
@@ -428,7 +431,7 @@ def register():
         
         # Ensure username is not already in use
         username = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        if request.form.get("username") == username:
+        if username != []:
             return apology("username already exists")
         
         # Ensure password was submitted
@@ -442,6 +445,8 @@ def register():
         # Ensure password is strong
         elif not re.match(r'[A-Za-z0-9@#$%^&+=]{8,}', request.form.get("password")):
             return apology("choose a stronger password")
+        elif not re.search(r"\d", request.form.get("password")) and not re.search(r"[A-Z]", request.form.get("password")):
+            return apology("choose a stronger password")
 
 
         # Check if passwords are the same
@@ -452,6 +457,9 @@ def register():
 
         # Store information
         rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(password))
+
+        # Remember which user has logged in
+        session["user_id"] = request.form.get("username")
 
         # Redirect user to home page
         return redirect("/")

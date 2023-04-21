@@ -26,7 +26,9 @@
     justify-content: center;
 }
 
-
+.margin {
+    margin: 3em;
+}
 
 
 
@@ -185,6 +187,7 @@ a:hover {
 
 .form-control{
     min-width: 100%;
+    
 }
 
 .centrer-horizontalement {
@@ -215,4 +218,20 @@ a:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.derouler{
+    background-color: rgba(141, 168, 236, 0.915); 
+    border-color: black; 
+    color: black; 
+}
+
+.connect_button{
+    background: rgba(69, 154, 228, 0.915) ; 
+    border-color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255);
+}
+
+.position{
+    margin-top: 10px;
 }
