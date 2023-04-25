@@ -6,15 +6,49 @@
 
 
 {% block main %}
+    <script>
+        function checkPasswd(input) {
+            let value=input.value;
+            let pwdError=document.getElementById("passwordError");
+            if(!value.match(/[A-Za-z0-9@#$%^&+=]{8,}/)) {
+                input.style.backgroundColor = "#FF4040";
+                pwdError.style.display="inherit";
+            } else {
+                input.style.backgroundColor = "#40FF40";
+                pwdError.style.display="none";
+            }
+            console.log(value);
+        }
+        function checkConfPasswd(input) {
+            let pwdValue=document.getElementById("password").value;
+            let ConfPwdError=document.getElementById("confpasswordError")
+            console.log(input);
+            if(pwdValue != input.value) {
+                input.style.backgroundColor = "#FF4040";
+                ConfPwdError.style.display="inherit";
+            } else {
+                input.style.backgroundColor = "#40FF40";
+                ConfPwdError.style.display="none";
+            }
+        }
+    </script>
+
     <form action="/register" method="post" style="width: 300px" class="centrer-horizontalement">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Identifiant" type="text" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
         </div>
         <div class="form-group">
-            <input class="form-control" name="password" placeholder="Mot de Passe" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
+            <input id="password" class="form-control" name="password" placeholder="Mot de Passe" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black"
+            onchange="checkPasswd(this)"
+            >
+            <span id="passwordError" style="color:red; font-style: italic; font-size:0.8em; display: none;">Votre mot de passe doit contenir au moins 8 charactères, une majuscule et un chiffre.</span>
         </div>
         <div class="form-group">
-            <input class="form-control" name="confirmation" placeholder="Confirmer Mot de Passe" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
+            <input class="form-control" name="confirmation" placeholder="Confirmer Mot de Passe" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black"
+                onchange="checkConfPasswd(this)"
+            >
+            <span id="confpasswordError" style="color:red; font-style: italic; font-size:0.8em; display: none;">Les deux Mots de Passe doivent être identiques.</span>
+
         </div>
         <button class="btn btn-primary" type="submit">S'inscrire</button>
     </form>
