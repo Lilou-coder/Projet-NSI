@@ -67,7 +67,7 @@ def joingame():
     if request.method == "POST":
 
         if not request.form.get("game_code"):
-            return apology("donner le code du jeu", 401)
+            return apology("must provide game code", 401)
 
         # Redirect user to game page
         gamecode = request.form.get("game_code")
@@ -94,6 +94,9 @@ def admingame(gamecode):
         # Update users 'progress' to the first question
         players = db.execute("UPDATE actif_players SET progress = 0 WHERE game_id = ?", game_id[0]["game_id"])
 
+        # Update users 'scores' to 0
+        players = db.execute("UPDATE actif_players SET score = 0 WHERE game_id = ?", game_id[0]["game_id"])
+
         # Redirect user to game page
         return redirect("/games/" + gamecode)
 
@@ -117,7 +120,7 @@ def admingame(gamecode):
         
         # Check if game code is valid
         if game_id == []:
-            return apology("Code de Jeu incorrect", 401)
+            return apology("Incorrect game code", 401)
         
         game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", gamecode)
         player_id = db.execute("SELECT user_id FROM actif_players WHERE game_id = ?", game_id[0]["game_id"])
@@ -136,18 +139,18 @@ def game(gamecode):
 
     # Check if game code is valid
     if game_id == []:
-        return apology("Code de Jeu incorrect", 404)
+        return apology("Incorrect game code", 404)
     
     # Find status of game
     game_progress = db.execute("SELECT actif_question FROM actif_games WHERE game_id = ?", game_id[0]["game_id"])
     # If not progress:
     if game_progress == []:
-        return apology ("Une erreur s'est produite lors de la récupération de la progression du jeu, veuillez réessayer", 403)
+        return apology ("Something went wrong when retrieving game progress, please try again", 403)
 
     # Find time for the question
     time = db.execute("SELECT time_for_each_question FROM actif_games WHERE game_code = ?", gamecode)
     if time == []:
-        return apology ("Une erreur s'est produite lors de la récupération du temps maximum par question, veuillez réessayer", 403)
+        return apology ("Something went wrong when retrieving the maximum time per question, please try again", 403)
 
     
     if int(game_progress[0]["actif_question"]) == -1:
@@ -172,18 +175,18 @@ def game(gamecode):
     player_progress = db.execute("SELECT progress FROM actif_players WHERE game_id = ? and user_id = ?", game_id[0]["game_id"], session["user_id"])
     # If not progress:
     if player_progress == []:
-        return apology ("Une erreur s'est produite lors de la récupération de la progression du joueur, veuillez réessayer", 403)
+        return apology ("Something went wrong when retrieving player progress, please try again", 403)
 
     # Number of questions in game
     number_of_questions_in_game = db.execute("SELECT number_of_questions FROM actif_games WHERE game_id = ?", game_id[0]["game_id"])
     if number_of_questions_in_game == []:
-        return apology ("Une erreur s'est produite lors de la récupération du nombre de questions dans le jeu, veuillez réessayer", 403)
+        return apology ("Something went wrong when retrieving the number of questions in the game, please try again", 403)
 
 
     # Find player score
     score = db.execute("SELECT score FROM actif_players WHERE user_id = ? and game_id = ?", session["user_id"], game_id[0]["game_id"])
     if score == []:
-        return apology ("Une erreur s'est produite lors de la récupération du score du joueur, veuillez réessayer", 403)
+        return apology ("Something went wrong when retrieving player score, please try again", 403)
     
     score = int(score[0]["score"])
 
@@ -234,7 +237,7 @@ def game(gamecode):
 
         # If not question, send error message
         if question == []:
-            return apology ("Une erreur s'est produite lors de la récupération de la question, veuillez réessayer", 403)
+            return apology ("Something went wrong when retrieving the question, please try again", 403)
 
 
     return render_template("game.html", progress = player_progress[0]["progress"], 
@@ -258,13 +261,13 @@ def results(gamecode):
 
     # Check if game code is valid
     if game == []:
-        return apology("Code de Jeu Incorrect", 404)
+        return apology("Incorrect game code", 404)
     
     # Find players and their scores
     players = db.execute("SELECT user_id,score,progress FROM actif_players WHERE game_id = ?", game[0]["game_id"])
     # If not players:
     if players == []:
-        return apology ("Une erreur s'est produite lors de la recherche des joueurs, veuillez réessayer", 403)
+        return apology ("Something went wrong when finding the players, please try again", 403)
 
 
     usernames = []
@@ -273,11 +276,11 @@ def results(gamecode):
         username = db.execute("SELECT username FROM users WHERE id = ?", players[i]["user_id"])
         # If not players:
         if username == []:
-            return apology ("Une erreur s'est produite lors de la recherche du nom d'utilisateur, veuillez réessayer", 403)
+            return apology ("Something went wrong when finding the username, please try again", 403)
 
         # See if player is still playing
         if players[i]["progress"] > int(game[0]["number_of_questions"]):
-            progress = "a finit"
+            progress = "a fini"
         else:
             progress = "est encore en train de jouer"
 
@@ -295,13 +298,13 @@ def correction(gamecode):
 
     # Check if game code is valid
     if game_id == []:
-        return apology("il y a eu un problème pour trouver l'identifiant du jeu", 404)
+        return apology("There was a problem finding the game id", 404)
     
     # Find questions and their answers
     question_ids = db.execute("SELECT question_id FROM question_for_game WHERE game_id = ?", game_id[0]["game_id"])
     # If not players:
     if question_ids == []:
-        return apology ("Une erreur s'est produite lors de la recherche des joueurs, veuillez réessayer", 403)
+        return apology ("Something went wrong when finding the players, please try again", 403)
 
     questions = []
 
@@ -322,27 +325,27 @@ def creategame():
 
         # Ensure number of questions was submitted
         if not request.form.get("subject"):
-            return apology("sujet manquant", 401)
+            return apology("must provide subject", 401)
         subject = request.form.get("subject")
 
         # Ensure number of questions was submitted
         if not request.form.get("number_of_questions"):
-            return apology("nombre de questions manquant", 401)
+            return apology("must provide numer of questions", 401)
         number_of_questions = request.form.get("number_of_questions")
 
         # Ensure number of questions is between 1 and 15
         if int(number_of_questions) < 1 or int(number_of_questions) > 16:
-            return apology( "Le nombre de questions doit être entre 2 et 15")
+            return apology( "Sorry the number of questions but be between 2 and 15")
 
 
         # Ensure time was submitted
         if not request.form.get("time"):
-            return apology("temps manquant", 401)
+            return apology("must provide time", 401)
         time = request.form.get("time")
 
         # Ensure time is between 5 and 20 seconds
         if int(time) < 2 or int(time) > 21:
-            return apology( "Le timer doit être entre 3 et 20 secondes")
+            return apology( "Sorry the time must be between 3 and 20 seconds")
 
         # Randomly generate game code
         letters = string.ascii_uppercase
@@ -356,7 +359,7 @@ def creategame():
         game_id = db.execute("SELECT game_id FROM actif_games WHERE game_code = ?", game_code)
         question_id = db.execute("SELECT id FROM questions WHERE subject = ? ORDER BY RANDOM() LIMIT ?", subject, number_of_questions)
         if question_id == []:
-            return apology ("désolé il y a eu un problème pour récupérer les questions", 403)
+            return apology ("sorry there was a problem retreiving the questions", 403)
 
         for i in range (len(question_id)):
             rows = db.execute("INSERT INTO question_for_game (game_id, question_number, question_id) VALUES (?, ?, ?)", game_id[0]["game_id"], i, question_id[i]["id"])
@@ -379,22 +382,22 @@ def login():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("Identifiant manquant", 401)
+            return apology("must provide username", 401)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("Mot de Passe manquant", 401)
+            return apology("must provide password", 401)
 
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        username = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("Identifiant et/ou Mot de Passe Incorrect", 401)
+        if len(username) != 1 or not check_password_hash(username[0]["hash"], request.form.get("password")):
+            return apology("invalid username and/or password", 401)
 
         # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = username[0]["id"]
 
         # Redirect user to home page
         return redirect("/")
@@ -424,34 +427,42 @@ def register():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("Identifiant Incorrect", 401)
+            return apology("must provide username", 401)
         
         # Ensure username is not already in use
         username = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        if request.form.get("username") == username:
-            return apology("Identifiant déjà existant")
+        if username != []:
+            return apology("username already exists")
         
         # Ensure password was submitted
         if not request.form.get("password"):
-            return apology("Mot de Passe manquant", 401)
+            return apology("must provide password", 401)
 
         # Ensure second password was submitted and is the same as first
         elif not request.form.get("confirmation"):
-            return apology("nouveau le mot de passe manquant ou non identique")
+            return apology("must provide password again")
 
         # Ensure password is strong
         elif not re.match(r'[A-Za-z0-9@#$%^&+=]{8,}', request.form.get("password")):
-            return apology("Mot de Passe trop faible")
+            return apology("choose a stronger password")
+        elif not re.search(r"\d", request.form.get("password")) and not re.search(r"[A-Z]", request.form.get("password")):
+            return apology("choose a stronger password")
 
 
         # Check if passwords are the same
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if password != confirmation:
-            return apology("Les deux Mots de Passe doivent être identiques", 401)
+            return apology("both passwords must be identical", 401)
 
         # Store information
         rows = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(password))
+
+        # Get user_id
+        user_id = db.execute("SELECT id FROM users WHERE username = ?", request.form.get("username"))
+
+        # Remember which user has logged in
+        session["user_id"] = user_id[0]["id"]
 
         # Redirect user to home page
         return redirect("/")

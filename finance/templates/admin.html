@@ -6,18 +6,23 @@
 
 {% block javascript %}
     <script>
-        
-        function timedRefresh(timeoutPeriod) {
-            setTimeout("location.reload(true);",timeoutPeriod);
+        function refresh() {
+            $.ajax({
+                url:location.href,
+                type:'GET',
+                success: function(data){
+                    $('#content').html($(data).find('#content').html());
+                }
+            });
         }
-        
-        window.onload = timedRefresh(5000);
 
+        window.onload = setInterval("refresh();",2000);;
+    
     </script>
 {% endblock %}
 
 {% block main %}
-    <table class="table tablestriped">
+    <table id="content" class="table tablestriped">
 
         <thead>
             <tr>
@@ -36,7 +41,7 @@
         {% endfor %}
     </table>
     <form method="post">
-        <button class="btn btn-primary">Commencez</button>
+        <button id="test" class="btn btn-primary" >Commencez</button>
     </form>
     
 {% endblock %}
