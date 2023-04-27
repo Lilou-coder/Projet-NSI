@@ -5,9 +5,15 @@
 
 }
 
-.header1{
-    color: white;
-    font-family: Impact sans-serif;
+.titlecode { 
+    color: #ffffff; 
+    font-family: 'Trocchi', serif; 
+    font-size: 30px; 
+    font-weight: 80; 
+    line-height: 72px; 
+    margin: 0 0 24px; 
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .violet_form{
@@ -309,3 +315,5 @@ margin-top: 10%;
     margin-top: 3em; 
     margin-bottom: 3em;
 }
+
+/* logo */
