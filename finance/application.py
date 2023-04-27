@@ -330,7 +330,7 @@ def creategame():
 
         # Ensure number of questions is between 1 and 15
         if int(number_of_questions) < 1 or int(number_of_questions) > 16:
-            return apology( "Sorry the number of questions but be between 2 and 15")
+            return apology( "Sorry the number of questions but be between 2 and 15", 401)
 
 
         # Ensure time was submitted

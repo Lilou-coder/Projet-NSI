@@ -1,9 +1,5 @@
 {% extends "layout.html" %}
 
-{% block title %}
-    Game
-{% endblock %}
-
 {% block javascript %}
     <script>
         
@@ -37,6 +33,12 @@
     </script>
 {% endblock %}
 
+{% block title %}
+    Game
+{% endblock %}
+
+
+
 {% block main %}
     
     {% if progress == -1 %}
@@ -67,19 +69,19 @@
         </thead>
     </table>
 
-<!-- Button of game -->       
-        
-<form method = "post" class="question-form">
-    <div class="question-row">
-        <button href=# id=test class="game-button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
-        <button href=# id=test class="game-button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
-    </div>
-    <div class="question-row">
-        <button href=# id=test class="game-button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
-        <button href=# id=test class="game-button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
-    </div>
-</form>
+    <!-- Button of game -->       
+            
+    <form method = "post" class="question-form">
+        <div class="question-row">
+            <button href=# id=test class="game-button" type="submit" name="answer" value = 1> {{ answer1 }} </button>
+            <button href=# id=test class="game-button" type="submit" name="answer" value = 2> {{ answer2 }} </button>
+        </div>
+        <div class="question-row">
+            <button href=# id=test class="game-button" type="submit" name="answer" value = 3> {{ answer3 }} </button>
+            <button href=# id=test class="game-button" type="submit" name="answer" value = 4> {{ answer4 }} </button>
+        </div>
+    </form>
 
-{% endif %}
+    {% endif %}
 
 {% endblock %}

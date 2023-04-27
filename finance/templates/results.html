@@ -18,37 +18,36 @@
 
 {% block main %}
 
-<head>
-    <audio controls autoplay loop id="myAudio" style="display: none">
-        <source src="https://github.com/Lilou-coder/Projet-NSI/raw/main/musique_Zh8uWuGw.mp3" type="audio/mp3">
-    </audio>
-</head>
+    <head>
+        <audio controls autoplay loop id="myAudio" style="display: none">
+            <source src="static\musique.mp3" type="audio/mp3">
+        </audio>
+    </head>
 
-<h2 class="white_question" > Scores </h2>
-    
-    
-    {% for user in usernames %}
-    
-<table class="table tablestriped">
-    <tr>
-        <td class="text-start; white_question">{{ user["username"] }} a {{ user["score"] }} réponses justes!</td>
-        <td class="text-start; white_question">{{ user["username"] }} {{ user["progress"] }}</td>
-    </tr>
-    {% endfor %}
-</table>
+    <h2 class="white_question" > Scores </h2>
+        
+        
+        {% for user in usernames %}
+        
+    <table class="table tablestriped">
+        <tr>
+            <td class="text-start; white_question">{{ user["username"] }} a {{ user["score"] }} réponses justes!</td>
+            <td class="text-start; white_question">{{ user["username"] }} {{ user["progress"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 
-<img src= "https://www.silhouettepng.com/wp-content/uploads/2/Octopus-PNG-Silhouette.png" width=30% height=30% class="logo"> 
-
-    
-<table class="center">
-    <tr>
-        <td>
-            <button class="button"><a class="nav-link" href="http://127.0.0.1:5000/games/{{ gamecode }}/correction">Correction</a></button>
-            <button class="button"><a class="nav-link" href="http://127.0.0.1:5000/">Jouer</a></button>
-        </td>
-    </tr>
-</table>
+    <img src="static\kraken.png" background = transparent width=40% height=40%> 
+        
+    <table class="center">
+        <tr>
+            <td>
+                <button class="button"><a class="nav-link" href="http://127.0.0.1:5000/games/{{ gamecode }}/correction">Correction</a></button>
+                <button class="button"><a class="nav-link" href="http://127.0.0.1:5000/">Jouer</a></button>
+            </td>
+        </tr>
+    </table>
 
     
 {% endblock %}

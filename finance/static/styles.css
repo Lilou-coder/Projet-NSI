@@ -5,6 +5,11 @@
 
 }
 
+.header1{
+    color: white;
+    font-family: Impact sans-serif;
+}
+
 .violet_form{
     background-color: rgba(141, 168, 236, 0.915);
     border-color: black;
