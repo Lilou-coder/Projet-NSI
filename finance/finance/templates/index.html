@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage 
+{% endblock %}
+
+{% block main %}
+
+    <head>
+        <audio controls autoplay loop id="myAudio" style="display: none">
+            <source src="static\musique.mp3" type="audio/mp3">
+        </audio>
+    </head>
+
+    <body >
+        
+        <p class="white_question bienvenue_margin" >Bienvenue sur Kraken! </p>
+
+        <div class="logo">
+            <table class="center">
+                <button class="button" on click="newgame()"><a class="nav-link" href="/creategame">Creer le jeu</a></button>
+                <button class="button" ><a class="nav-link" href="/joingame">Rejoindre un jeu</a></button>
+            </table>  
+        </div>
+        <div class="dropdown" >
+            <button class="button_rules"> Règles du jeu</button>
+            <div class="dropdown-content">
+                <ul class="white_question">
+                    <li>Choisissez un thème, le nombre de question et le temps</li>
+                    <li>Partagez le code de l'administrateur avec vos amis</li>
+                    <li>Commencez et répondez aux questions!</li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+
+{% endblock %}
