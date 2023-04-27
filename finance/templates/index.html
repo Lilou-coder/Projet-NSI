@@ -14,19 +14,14 @@
 <body >
     
     
-<p class="white_question" style="font-size: 2em;">Bienvenue sur Kraken! </p>
+<p class="white_question bienvenue_margin" >Bienvenue sur Kraken! </p>
 
-    <table class="center" style="margin-bottom: 2em;">
-        <tr>
-            <td>
-                <button class="button"><a class="nav-link" href="/jouer">Jouer</a></button>
-                <button class="button"><a class="nav-link" href="/contacteznous">Une idée? Contactez-nous!</a></button>
-            </td>
-        </tr>
-    </table>
-
-
-
+<div class="logo">
+    <table class="center">
+        <button class="button" on click="newgame()"><a class="nav-link" href="/creategame">Creer le jeu</a></button>
+        <button class="button" ><a class="nav-link" href="/joingame">Rejoindre un jeu</a></button>
+    </table>  
+</div>
 <div class="dropdown" >
     <button class="button_rules"> Règles du jeu</button>
     <div class="dropdown-content">
@@ -39,9 +34,5 @@
 </div>
 
 </body>
-
-
-
-
 
 {% endblock %}

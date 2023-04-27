@@ -141,7 +141,7 @@ main img
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 20px; 
 }
 
 /* unvisited link */
@@ -194,7 +194,9 @@ a:hover {
     position: absolute; /* postulat de départ */
     left: 50%; /* à 50%/50% du parent référent */
     transform: translate(-50%, -50%);
-    margin-top: 10%;
+    
+margin-top: 10%;
+
 }
 
 
@@ -234,4 +236,71 @@ a:hover {
 
 .position{
     margin-top: 10px;
+}
+
+.logindiv{
+    width: 300px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.envoyer{
+    background-color: #5D3FD3; 
+    border-radius: 10px ;
+    width: 200px; 
+    height: 75px; 
+    color:white
+}
+
+.inputs{
+    background: rgba(141, 168, 236, 0.915) ; 
+    border-color: black; color: black;
+}
+
+.inputs:focus{
+    background: rgba(141, 168, 236, 0.915) ; 
+    border-color: black; color: black"
+}
+
+.question{
+    font-size: 30px ;
+    margin: auto; 
+    margin-top:20px; 
+    margin-bottom: 80px
+}
+
+.bienvenue_margin{
+    font-size: 2em;
+}
+
+.margin_bottom{
+    margin-bottom: 2em
+}
+
+.main{
+    background: rgb(58, 56, 139);
+}
+
+.nouveaux{
+    margin-top: 2em;
+}
+
+.se_connecter{
+    margin-top: 1em;
+}
+
+.button_width{
+    width: 300px;
+}
+
+.wrong_mdp{
+    color:red; 
+    font-style: italic; 
+    font-size:0.8em; 
+    display: none;
+}
+
+.logo{
+    margin-top: 3em; 
+    margin-bottom: 3em;
 }

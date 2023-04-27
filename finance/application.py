@@ -54,11 +54,6 @@ def index():
 
     return render_template("index.html",)
 
-@app.route("/jouer")
-@login_required
-def jouer():
-    return render_template("jouer.html",)
-
 @app.route("/joingame", methods=["GET", "POST"])
 @login_required
 def joingame():

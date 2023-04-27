@@ -38,21 +38,21 @@
         }
     </script>
 
-    <form action="/register" method="post" style="width: 300px" class="centrer-horizontalement">
+    <form action="/register" method="post" class="centrer-horizontalement button_width">
         <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Identifiant" type="text" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black">
+            <input autocomplete="off" autofocus class="form-control inputs" name="username" placeholder="Identifiant" type="text">
         </div>
         <div class="form-group">
-            <input id="password" class="form-control" name="password" placeholder="Mot de Passe" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black"
+            <input id="password" class="form-control inputs" name="password" placeholder="Mot de Passe" type="password" 
             onchange="checkPasswd(this)"
             >
-            <span id="passwordError" style="color:red; font-style: italic; font-size:0.8em; display: none;">Votre mot de passe doit contenir au moins 8 charactères, une majuscule et un chiffre.</span>
+            <span id="passwordError" class="wrong_mdp">Votre mot de passe doit contenir au moins 8 charactères, une majuscule et un chiffre.</span>
         </div>
         <div class="form-group">
-            <input class="form-control" name="confirmation" placeholder="Confirmer Mot de Passe" type="password" style="background: rgba(141, 168, 236, 0.915) ; border-color: black; color: black"
+            <input class="form-control inputs" name="confirmation" placeholder="Confirmer Mot de Passe" type="password"
                 onchange="checkConfPasswd(this)"
             >
-            <span id="confpasswordError" style="color:red; font-style: italic; font-size:0.8em; display: none;">Les deux Mots de Passe doivent être identiques.</span>
+            <span id="confpasswordError" class="wrong_mdp">Les deux Mots de Passe doivent être identiques.</span>
 
         </div>
         <button class="btn btn-primary" type="submit">S'inscrire</button>
