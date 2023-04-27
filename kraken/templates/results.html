@@ -5,25 +5,28 @@
 {% endblock %}
 
 {% block javascript %}
-    <script>
-        
-        function timedRefresh(timeoutPeriod) {
-            setTimeout("location.reload(true);",timeoutPeriod);
-        }
-        
-        window.onload = timedRefresh(5000);
-        
-    </script>
+<script>
+    function refresh() {
+        $.ajax({
+            url:location.href,
+            type:'GET',
+            success: function(data){
+                $('#result').html($(data).find('#result').html());
+            }
+        });
+    }
+
+    window.onload = setInterval("refresh();",2000);;
+    
+</script>
 {% endblock %}
 
 {% block main %}
 
     <h2 class="white_question" > Scores </h2>
         
-        
+    <table id="result" class="table tablestriped">
         {% for user in usernames %}
-        
-    <table class="table tablestriped">
         <tr>
             <td class="text-start; white_question">{{ user["username"] }} a {{ user["score"] }} réponses justes!</td>
             <td class="text-start; white_question">{{ user["username"] }} {{ user["progress"] }}</td>
