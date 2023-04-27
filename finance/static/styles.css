@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/carbon-droid');
+
 /* colors et police */
 .white_question{
     color: white;
@@ -317,3 +319,9 @@ margin-top: 10%;
 }
 
 /* logo */
+
+.logo_font{
+    font-family: 'CARBON-DROID', sans-serif;                          
+    color: rgb(58, 56, 139);
+    font-size: 30px;
+}
