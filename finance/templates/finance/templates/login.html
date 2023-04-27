@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <head>
+        <audio controls autoplay loop id="myAudio" style="display: none">
+            <source src="static\musique.mp3" type="audio/mp3">
+        </audio>
+    </head>
+
+    <img src="static\kraken.png" background = transparent width=40% height=40% > 
+
+
+
+    <form method="post" >
+        <div class="form-group logindiv">
+            <input autocomplete="off" autofocus class="form-control inputs" name="username" placeholder="Identifiant" type="text" >
+        </div>
+        <div class="form-group logindiv">
+            <input class="form-control inputs" name="password" placeholder="Mot de Passe" type="password" >
+        </div>
+        <button class="btn btn-primary connect_button se_connecter" type="submit" action="/login"  >Se connecter</button>  
+    </form>
+
+    <form action="/register" >
+        <button class="btn btn-primary connect_button nouveaux" type="submit" > Nouveaux Joueurs</button>
+    </form>
+
+{% endblock %}

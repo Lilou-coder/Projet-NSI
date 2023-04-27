@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block javascript %}
+
+<script>
+    function checkPasswd(input) {
+        let value=input.value;
+        let pwdError=document.getElementById("passwordError");
+        if(!value.match(/[A-Za-z0-9@#$%^&+=]{8,}/)) {
+            input.style.backgroundColor = "#FF4040";
+            pwdError.style.display="inherit";
+        } else {
+            input.style.backgroundColor = "#40FF40";
+            pwdError.style.display="none";
+        }
+        console.log(value);
+    }
+    function checkConfPasswd(input) {
+        let pwdValue=document.getElementById("password").value;
+        let ConfPwdError=document.getElementById("confpasswordError")
+        console.log(input);
+        if(pwdValue != input.value) {
+            input.style.backgroundColor = "#FF4040";
+            ConfPwdError.style.display="inherit";
+        } else {
+            input.style.backgroundColor = "#40FF40";
+            ConfPwdError.style.display="none";
+        }
+    }
+</script>
+
+{% endblock %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <form action="/register" method="post" class="centrer-horizontalement button_width">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control inputs" name="username" placeholder="Identifiant" type="text">
+        </div>
+        <div class="form-group">
+            <input id="password" class="form-control inputs" name="password" placeholder="Mot de Passe" type="password" 
+            onchange="checkPasswd(this)"
+            >
+            <span id="passwordError" class="wrong_mdp">Votre mot de passe doit contenir au moins 8 charactères, une majuscule et un chiffre.</span>
+        </div>
+        <div class="form-group">
+            <input class="form-control inputs" name="confirmation" placeholder="Confirmer Mot de Passe" type="password"
+                onchange="checkConfPasswd(this)"
+            >
+            <span id="confpasswordError" class="wrong_mdp">Les deux Mots de Passe doivent être identiques.</span>
+
+        </div>
+        <button class="btn btn-primary" type="submit">S'inscrire</button>
+    </form>
+    
+{% endblock %}

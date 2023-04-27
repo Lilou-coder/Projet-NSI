@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block javascript %}
+    <script>
+        function refresh() {
+            $.ajax({
+                url:location.href,
+                type:'GET',
+                success: function(data){
+                    $('#content').html($(data).find('#content').html());
+                }
+            });
+        }
+
+        window.onload = setInterval("refresh();",2000);;
+    
+    </script>
+{% endblock %}
+
+{% block title %}
+    Game
+{% endblock %}
+
+
+
+{% block main %}
+    <head>
+        <audio controls autoplay loop id="myAudio" style="display: none">
+            <source src="static\musique.mp3" type="audio/mp3">
+        </audio>
+    </head>
+    
+    <table id="content" class="table tablestriped">
+
+        <thead>
+            <tr>
+                <th class="text-start; white_question" >Ton code est: {{gamecode}}</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th class="text-start: white_question" >Joueurs</th>
+            </tr>
+        </thead>
+        {% for player in players %}
+        <tr>
+            <td class="text-start; white_question" >{{ player["username"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form method="post">
+        <button id="test" class="btn btn-primary" >Commencez</button>
+    </form>
+    
+{% endblock %}
